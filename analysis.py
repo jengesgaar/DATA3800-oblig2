@@ -8,7 +8,7 @@ from pathlib import Path
 import pandas as pd
 
 DATA_FILE = Path("datasets/04610_cleaned.csv")
-#OUTPUT_DIR = Path("datasets/analysis_results")
+OUTPUT_DIR = Path("datasets/analysis_results")
 
 START_YEAR = 2001
 END_YEAR = 2024
@@ -48,8 +48,29 @@ def load_data():
     
     return df
 
+
+# Data quality - reporting missing values and avalable years by  region
+def data_quality(df):
+    OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
+
+    df.isna().sum().rename("missing_values").to_csv(OUTPUT_DIR / "missing_values.csv")
+
+    coverage = (df.groupby(["region_name", "crop"]).agg(available_years=("yield_kg_per_decare", lambda values: values.notna().sum()),
+                                                                         first_year=("year", "min"), last_year=("year", "max"),)
+            .reset_index()                           
+            )
+    
+    coverage.to_csv(OUTPUT_DIR / "regional_coverage.csv", index=False)
+
+    print("Available yield observations: ", df["yield_kg_per_decare"].notna().sum())
+    print("\nObservations by crop: ")
+    print(df.groupby("crop")["yield_kg_per_decare"].count().to_string())
+
+
+
 def main():
     df = load_data()
+    data_quality(df)
     print(f"Loaded {len(df)} rows.")
 
 if __name__ == "__main__":
