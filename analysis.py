@@ -6,6 +6,7 @@ Input: ...
 
 from pathlib import Path
 import pandas as pd
+import numpy as np
 
 DATA_FILE = Path("datasets/04610_cleaned.csv")
 OUTPUT_DIR = Path("datasets/analysis_results")
@@ -66,6 +67,70 @@ def data_quality(df):
     print("\nObservations by crop: ")
     print(df.groupby("crop")["yield_kg_per_decare"].count().to_string())
 
+
+# Prepare data - calculating typical yields and deviations by region and crop
+def prepare_data(df):
+   
+    df = df.dropna(
+        subset=["region_code", "year", "crop", "yield_kg_per_decare"]
+    ).copy()
+
+    df = df[df["yield_kg_per_decare"] > 0].copy()
+
+    groups = df.groupby(["region_code", "crop"])
+
+    df["typical_yield"] = groups[
+        "yield_kg_per_decare"
+    ].transform("mean")
+
+    df["available_years"] = groups[
+        "year"
+    ].transform("nunique")
+
+    # Deviation requires at least two observations
+    df["yield_deviation"] = np.where(
+        df["available_years"] >= 2,
+        100 * (
+            df["yield_kg_per_decare"] / df["typical_yield"] - 1
+        ),
+        np.nan
+    )
+    
+    return df
+""" 
+TO DO: Enable after merging rainfall data by region and year!!
+    
+     weather = df.drop_duplicates(["region_code", "year"])
+    
+     rainfall_mean = weather.groupby("region_code")[
+         "rainfall_sum"
+     ].mean()
+    
+     regional_mean = df["region_code"].map(rainfall_mean)
+    
+     df["rainfall_deviation"] = np.where(
+         regional_mean > 0,
+         100 * (df["rainfall_sum"] / regional_mean - 1),
+         np.nan
+     )
+    
+     values = (
+         df.drop_duplicates(["region_code", "year"])
+         ["rainfall_deviation"]
+         .dropna()
+     )
+    
+     if values.nunique() >= 3:
+        low, high = values.quantile([1/3, 2/3])
+    
+         if low < high:
+            df["rainfall_group"] = pd.cut(
+                 df["rainfall_deviation"],
+                bins=[-np.inf, low, high, np.inf],
+                 labels=["Dry", "Normal", "Wet"]
+             )
+
+"""
 
 
 def main():
