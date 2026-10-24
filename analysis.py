@@ -7,6 +7,9 @@ Input: ...
 from pathlib import Path
 import pandas as pd
 import numpy as np
+import matplotlib
+matplotlib.use("Agg")
+import matplotlib.pyplot as plt
 
 DATA_FILE = Path("datasets/04610_cleaned.csv")
 OUTPUT_DIR = Path("datasets/analysis_results")
@@ -133,10 +136,91 @@ TO DO: Enable after merging rainfall data by region and year!!
 """
 
 
+# Compare average yields between crop types
+def compare_crops(df):
+    """Compare average yields for wheat, barley and oats."""
+
+    # Calculate average yield and number of observations
+    summary = (
+        df.groupby("crop")
+        .agg(
+            mean_yield=("yield_kg_per_decare", "mean"),
+            observations=("yield_kg_per_decare", "count")
+        )
+        .reset_index()
+    )
+
+    # Save the results to CSV
+    summary.to_csv(
+        OUTPUT_DIR / "crop_summary.csv",
+        index=False
+    )
+
+    print("\nAverage yield by crop:")
+    print(summary.to_string(index=False))
+
+    # Create a bar chart
+    ax = summary.plot.bar(
+        x="crop",
+        y="mean_yield",
+        figsize=(8, 5),
+        rot=0,
+        legend=False
+    )
+
+    ax.set_title("Average crop yield (2001-2024)")
+    ax.set_xlabel("Crop")
+    ax.set_ylabel("Yield (kg/decare)")
+
+    plt.tight_layout()
+
+    # Save the figure
+    plt.savefig(
+        OUTPUT_DIR / "average_crop_yields.png",
+        dpi=150
+    )
+
+    plt.close()
+    
+"""
+     TO DO: enable when rainfall data has been merged.
+    
+     comparison = (
+         df.dropna(subset=["rainfall_group"])
+         .groupby(["crop", "rainfall_group"], observed=True)
+         .agg(
+             mean_yield=("yield_kg_per_decare", "mean"),
+             mean_deviation=("yield_deviation", "mean"),
+             observations=("yield_kg_per_decare", "count")
+         )
+         .reset_index()
+     )
+    
+     comparison.to_csv(
+         OUTPUT_DIR / "crop_rainfall_comparison.csv",
+         index=False
+     )
+"""
+
+
 def main():
+    OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
+
     df = load_data()
     data_quality(df)
+
+    df = prepare_data(df)
+
+    df.to_csv(
+        OUTPUT_DIR / "prepared_data.csv",
+        index=False
+    )
+
+    compare_crops(df)
+
     print(f"Loaded {len(df)} rows.")
+    print("Analysis completed.")
+
 
 if __name__ == "__main__":
     main()
