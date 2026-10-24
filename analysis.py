@@ -10,6 +10,8 @@ import numpy as np
 import matplotlib
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
+# Enable when the rainfall data is available
+#import statsmodels.formula.api as smf
 
 DATA_FILE = Path("datasets/04610_cleaned.csv")
 OUTPUT_DIR = Path("datasets/analysis_results")
@@ -216,6 +218,50 @@ def compare_crops(df):
 """
 
 
+# Regression analysis - relationship between yield deviations and rainfall
+"""
+# Enable after merging rainfall data
+def regression_analysis(df):
+
+    results = []
+
+    for crop, group in df.groupby("crop"):
+        data = group.dropna(subset=[
+            "rainfall_deviation",
+            "yield_deviation"
+        ]).copy()
+
+        # Require enough observations for regression
+        if (
+            len(data) < 10
+            or data["year"].nunique() < 3
+            or data["rainfall_deviation"].nunique() < 3
+        ):
+            continue
+
+        # Control for differences between regions
+        model = smf.ols(
+            "yield_deviation ~ rainfall_deviation + C(region_code)",
+            data=data
+        )
+
+        fitted = model.fit()
+
+        results.append({
+            "crop": crop,
+            "observations": len(data),
+            "rainfall_coefficient": fitted.params["rainfall_deviation"],
+            "p_value": fitted.pvalues["rainfall_deviation"],
+            "r_squared": fitted.rsquared
+        })
+
+    pd.DataFrame(results).to_csv(
+        OUTPUT_DIR / "regression_results.csv",
+        index=False
+    )
+"""
+
+
 def main():
     OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
 
@@ -228,8 +274,12 @@ def main():
         OUTPUT_DIR / "prepared_data.csv",
         index=False
     )
-
+ 
     compare_crops(df)
+
+    # Enable when rainfall data is available
+    #regression_analysis(df)
+   
 
     print(f"Loaded {len(df)} rows.")
     print("Analysis completed.")
