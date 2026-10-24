@@ -71,16 +71,30 @@ def data_quality(df):
     print(df.groupby("crop")["yield_kg_per_decare"].count().to_string())
 
 
-# Prepare data - calculating typical yields and deviations by region and crop
+
+# Prepare data - calculating typical yields and deviations
 def prepare_data(df):
-   
+    
+
     df = df.dropna(
         subset=["region_code", "year", "crop", "yield_kg_per_decare"]
     ).copy()
 
+    # Check zero or negative yield values before filtering
+    invalid_yields = df[df["yield_kg_per_decare"] <= 0]
+
+    print("\nZero or negative yield observations:")
+    print(
+        invalid_yields[
+            ["region_name", "year", "crop", "yield_kg_per_decare"]
+        ].to_string(index=False)
+    )
+
+    # Exclude zero or negative yields from the analysis
     df = df[df["yield_kg_per_decare"] > 0].copy()
 
     groups = df.groupby(["region_code", "crop"])
+
 
     df["typical_yield"] = groups[
         "yield_kg_per_decare"
@@ -138,7 +152,6 @@ TO DO: Enable after merging rainfall data by region and year!!
 
 # Compare average yields between crop types
 def compare_crops(df):
-    """Compare average yields for wheat, barley and oats."""
 
     # Calculate average yield and number of observations
     summary = (
@@ -181,7 +194,7 @@ def compare_crops(df):
     )
 
     plt.close()
-    
+
 """
      TO DO: enable when rainfall data has been merged.
     
