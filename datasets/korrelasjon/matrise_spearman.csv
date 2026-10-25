@@ -1,0 +1,10 @@
+,rainfall_sum,rainfall_std,rainfall_planting,rainfall_harvesting,percentage_wet,percentage_dry,longest_dryspell,days_with_frost,yield_deviation
+rainfall_sum,1.0,0.049,0.786,0.846,0.573,-0.573,-0.364,-0.216,-0.259
+rainfall_std,0.049,1.0,0.058,0.03,0.053,-0.053,-0.039,-0.002,0.036
+rainfall_planting,0.786,0.058,1.0,0.687,0.414,-0.414,-0.311,-0.157,-0.177
+rainfall_harvesting,0.846,0.03,0.687,1.0,0.509,-0.509,-0.317,-0.203,-0.23
+percentage_wet,0.573,0.053,0.414,0.509,1.0,-1.0,-0.395,-0.124,-0.28
+percentage_dry,-0.573,-0.053,-0.414,-0.509,-1.0,1.0,0.395,0.124,0.28
+longest_dryspell,-0.364,-0.039,-0.311,-0.317,-0.395,0.395,1.0,0.122,0.208
+days_with_frost,-0.216,-0.002,-0.157,-0.203,-0.124,0.124,0.122,1.0,0.055
+yield_deviation,-0.259,0.036,-0.177,-0.23,-0.28,0.28,0.208,0.055,1.0
