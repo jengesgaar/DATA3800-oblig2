@@ -13,22 +13,22 @@ from scipy import stats
 
 # --- setup ---
 
-DATAFILE = Path("datasets/analysedata.csv")
+DATAFILE = Path("datasets/merged.csv")
 OUTDIR = Path("datasets/correlation")
 
 # These must match what cleaning_merge.py produces.
 # TODO: double-check the names
-TARGET = "yield_deviation"
+TARGET = "yield_kg_per_decare"
 
 EXPLANATORY = [
-    "rainfall_sum",          # total rainfall during the growing season
-    "rainfall_std",          # how unevenly the rain fell
-    "rainfall_planting",     # rainfall around planting
-    "rainfall_harvesting",   # rainfall around harvest
-    "percentage_wet",        # share of wet days
-    "percentage_dry",        # share of dry days
-    "longest_dryspell",      # longest dry spell in days
-    "days_with_frost",
+    "downpour_10_3_z",          # Total rainfall in the months october to march
+    "downpour_4_5_z",           # Total rainfall in the months april to may
+    "downpour_6_7_z",           # Total rainfall in the months june to july
+    "downpour_former_8_9_z",    # Total rainfall in the months august to september
+    "downpour_latter_8_9_z",    # Total rainfall in the months august to september
+    "first_frost_day_z",        # First day of frost the former autumn
+    "last_frost_day_z",         # Last day of frost in the spring
+    "longest_dry_spell_z",      # longest dry spell in days
 ]
 
 COL_REGION, COL_CROP, COL_YEAR = "region_name", "crop", "year"
@@ -128,7 +128,7 @@ def by_crop(df, method="spearman"):
     return pd.concat(parts, ignore_index=True)
 
 
-def by_region(df, variable="rainfall_sum", method="spearman"):
+def by_region(df, variable="downpour_6_7_z", method="spearman"):
     """
     One correlation per region and crop, to see whether it varies regionally.
 

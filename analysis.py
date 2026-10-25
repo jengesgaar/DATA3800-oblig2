@@ -13,7 +13,7 @@ import matplotlib.pyplot as plt
 # Enable when the rainfall data is available
 #import statsmodels.formula.api as smf
 
-DATA_FILE = Path("datasets/04610_cleaned.csv")
+DATA_FILE = Path("datasets/merged.csv")
 OUTPUT_DIR = Path("datasets/analysis_results")
 
 START_YEAR = 2001
@@ -196,6 +196,8 @@ def compare_crops(df):
     )
 
     plt.close()
+
+
 
 """
      TO DO: enable when rainfall data has been merged.

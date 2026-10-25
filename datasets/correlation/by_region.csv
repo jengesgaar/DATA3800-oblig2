@@ -1,0 +1,47 @@
+region_name,crop,n,correlation,p_value
+Nordland - Nordlánnda,Bygg,12,0.056,0.8629
+Oppland (-2019),Bygg,19,0.005,0.9829
+Oslo og Akershus (-2019),Bygg,19,0.003,0.9915
+Møre og Romsdal,Bygg,20,-0.077,0.7479
+Hedmark (-2019),Bygg,19,-0.107,0.6628
+Buskerud (-2019),Bygg,19,-0.149,0.5423
+Rogaland,Bygg,24,-0.149,0.488
+Vestfold (-2019),Bygg,19,-0.161,0.5092
+Vest-Agder (-2019),Bygg,18,-0.22,0.3803
+Østfold (-2019),Bygg,19,-0.259,0.2845
+Aust-Agder (-2019),Bygg,18,-0.276,0.2684
+Nord-Trøndelag (-2017),Bygg,17,-0.38,0.1325
+Telemark (-2019),Bygg,19,-0.422,0.0721
+Sør-Trøndelag (-2017),Bygg,17,-0.564,0.0183
+Møre og Romsdal,Havre,18,0.141,0.5758
+Oslo og Akershus (-2019),Havre,19,0.123,0.6162
+Nordland - Nordlánnda,Havre,10,0.103,0.777
+Vest-Agder (-2019),Havre,19,0.026,0.9148
+Sør-Trøndelag (-2017),Havre,17,0.018,0.9441
+Oppland (-2019),Havre,19,0.007,0.9773
+Rogaland,Havre,24,-0.048,0.8244
+Buskerud (-2019),Havre,19,-0.05,0.8389
+Østfold (-2019),Havre,19,-0.154,0.5302
+Vestfold (-2019),Havre,19,-0.163,0.5045
+Aust-Agder (-2019),Havre,19,-0.267,0.2693
+Telemark (-2019),Havre,19,-0.277,0.2506
+Nord-Trøndelag (-2017),Havre,16,-0.359,0.1723
+Hedmark (-2019),Havre,19,-0.437,0.0613
+Nord-Trøndelag (-2017),Hvete,15,0.054,0.8496
+Oppland (-2019),Hvete,19,0.047,0.8472
+Hedmark (-2019),Hvete,19,0.004,0.9886
+Buskerud (-2019),Hvete,19,-0.007,0.9772
+Aust-Agder (-2019),Hvete,12,-0.046,0.8883
+Oslo og Akershus (-2019),Hvete,19,-0.061,0.8027
+Rogaland,Hvete,15,-0.093,0.7409
+Østfold (-2019),Hvete,19,-0.154,0.528
+Vestfold (-2019),Hvete,19,-0.189,0.439
+Telemark (-2019),Hvete,19,-0.213,0.3807
+Sør-Trøndelag (-2017),Hvete,14,-0.301,0.295
+Oslo og Akershus (-2019),Rug og rughvete,19,0.066,0.7889
+Hedmark (-2019),Rug og rughvete,19,-0.044,0.8585
+Vestfold (-2019),Rug og rughvete,18,-0.052,0.8388
+Østfold (-2019),Rug og rughvete,19,-0.1,0.6838
+Buskerud (-2019),Rug og rughvete,19,-0.173,0.4791
+Telemark (-2019),Rug og rughvete,15,-0.182,0.5159
+Oppland (-2019),Rug og rughvete,19,-0.188,0.4413

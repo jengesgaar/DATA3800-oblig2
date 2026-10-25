@@ -1,0 +1,9 @@
+variable,n,correlation,p_value,p_adjusted,significant_5pct
+downpour_10_3_z,987,-0.189,0.0,0.0,True
+downpour_4_5_z,987,-0.198,0.0,0.0,True
+downpour_6_7_z,987,-0.006,0.8544,1.0,False
+downpour_former_8_9_z,987,-0.18,0.0,0.0,True
+downpour_latter_8_9_z,987,-0.097,0.0022,0.0176,True
+first_frost_day_z,987,-0.105,0.0009,0.0072,True
+last_frost_day_z,987,0.114,0.0003,0.0024,True
+longest_dry_spell_z,987,-0.059,0.0639,0.5112,False

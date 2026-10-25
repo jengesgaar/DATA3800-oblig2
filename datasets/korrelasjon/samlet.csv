@@ -1,9 +1,0 @@
-variabel,n,korrelasjon,p_verdi,p_justert,signifikant_5pct
-rainfall_sum,504,-0.259,0.0,0.0,True
-rainfall_std,504,0.036,0.4246,1.0,False
-rainfall_planting,504,-0.177,0.0001,0.0008,True
-rainfall_harvesting,504,-0.23,0.0,0.0,True
-percentage_wet,504,-0.28,0.0,0.0,True
-percentage_dry,504,0.28,0.0,0.0,True
-longest_dryspell,504,0.208,0.0,0.0,True
-days_with_frost,504,0.055,0.2198,1.0,False

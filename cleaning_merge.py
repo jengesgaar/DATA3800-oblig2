@@ -51,22 +51,24 @@ def clean_crop_data(input_file, output_file):
     if duplicates > 0:
         raise ValueError(f"Found {duplicates} duplicate region-year-crop combinations")
 
+
+    # A yield of 0 kg per decare means that the crop was not grown or not included, not that the harvest failed
+    crop_final_df["yield_kg_per_decare"] = crop_final_df["yield_kg_per_decare"].mask(crop_final_df["yield_kg_per_decare"] == 0)
+
+
+    print("Rows:", crop_final_df.shape[0])
+    print("Missing yield values:", crop_final_df["yield_kg_per_decare"].isna().sum())
+    print("Saved cleaned dataset to:", output_file)
+    # Remove unusable rows
+    crop_final_df = crop_final_df.dropna(subset=["yield_kg_per_decare"])
+    
+
     # Save the cleaned dataset
     crop_final_df.to_csv(
         output_file,
         index=False,
         encoding="utf-8-sig"
     )
-
-    print("Rows:", crop_final_df.shape[0])
-    print("Missing yield values:", crop_final_df["yield_kg_per_decare"].isna().sum())
-    print("Saved cleaned dataset to:", output_file)
-
+    
     return crop_final_df
 
-
-if __name__ == "__main__":
-    clean_crop_data(
-        "datasets/04610.csv",
-        "datasets/04610_cleaned.csv"
-    )

@@ -1,0 +1,988 @@
+﻿region_code,region_name,year,crop,yield_kg_per_decare
+02-03,Oslo og Akershus (-2019),2001,Hvete,388.0
+01,Østfold (-2019),2001,Hvete,383.0
+04,Hedmark (-2019),2001,Hvete,473.0
+05,Oppland (-2019),2001,Hvete,421.0
+06,Buskerud (-2019),2001,Hvete,400.0
+07,Vestfold (-2019),2001,Hvete,437.0
+08,Telemark (-2019),2001,Hvete,410.0
+11,Rogaland,2001,Hvete,432.0
+17,Nord-Trøndelag (-2017),2001,Hvete,308.0
+02-03,Oslo og Akershus (-2019),2001,Bygg,374.0
+01,Østfold (-2019),2001,Bygg,397.0
+04,Hedmark (-2019),2001,Bygg,393.0
+05,Oppland (-2019),2001,Bygg,369.0
+06,Buskerud (-2019),2001,Bygg,370.0
+07,Vestfold (-2019),2001,Bygg,415.0
+08,Telemark (-2019),2001,Bygg,360.0
+09,Aust-Agder (-2019),2001,Bygg,345.0
+10,Vest-Agder (-2019),2001,Bygg,383.0
+11,Rogaland,2001,Bygg,409.0
+15,Møre og Romsdal,2001,Bygg,170.0
+16,Sør-Trøndelag (-2017),2001,Bygg,284.0
+17,Nord-Trøndelag (-2017),2001,Bygg,244.0
+02-03,Oslo og Akershus (-2019),2001,Havre,387.0
+01,Østfold (-2019),2001,Havre,417.0
+04,Hedmark (-2019),2001,Havre,375.0
+05,Oppland (-2019),2001,Havre,345.0
+06,Buskerud (-2019),2001,Havre,405.0
+07,Vestfold (-2019),2001,Havre,443.0
+08,Telemark (-2019),2001,Havre,400.0
+09,Aust-Agder (-2019),2001,Havre,334.0
+10,Vest-Agder (-2019),2001,Havre,469.0
+11,Rogaland,2001,Havre,452.0
+15,Møre og Romsdal,2001,Havre,164.0
+16,Sør-Trøndelag (-2017),2001,Havre,297.0
+17,Nord-Trøndelag (-2017),2001,Havre,228.0
+02-03,Oslo og Akershus (-2019),2001,Rug og rughvete,267.0
+01,Østfold (-2019),2001,Rug og rughvete,187.0
+04,Hedmark (-2019),2001,Rug og rughvete,309.0
+05,Oppland (-2019),2001,Rug og rughvete,109.0
+06,Buskerud (-2019),2001,Rug og rughvete,225.0
+02-03,Oslo og Akershus (-2019),2002,Hvete,401.0
+01,Østfold (-2019),2002,Hvete,411.0
+04,Hedmark (-2019),2002,Hvete,478.0
+05,Oppland (-2019),2002,Hvete,404.0
+06,Buskerud (-2019),2002,Hvete,394.0
+07,Vestfold (-2019),2002,Hvete,410.0
+08,Telemark (-2019),2002,Hvete,336.0
+16,Sør-Trøndelag (-2017),2002,Hvete,309.0
+17,Nord-Trøndelag (-2017),2002,Hvete,317.0
+02-03,Oslo og Akershus (-2019),2002,Bygg,319.0
+01,Østfold (-2019),2002,Bygg,349.0
+04,Hedmark (-2019),2002,Bygg,339.0
+05,Oppland (-2019),2002,Bygg,310.0
+06,Buskerud (-2019),2002,Bygg,294.0
+07,Vestfold (-2019),2002,Bygg,327.0
+08,Telemark (-2019),2002,Bygg,247.0
+09,Aust-Agder (-2019),2002,Bygg,186.0
+10,Vest-Agder (-2019),2002,Bygg,272.0
+11,Rogaland,2002,Bygg,377.0
+12,Hordaland (-2019),2002,Bygg,264.0
+16,Sør-Trøndelag (-2017),2002,Bygg,372.0
+17,Nord-Trøndelag (-2017),2002,Bygg,334.0
+02-03,Oslo og Akershus (-2019),2002,Havre,363.0
+01,Østfold (-2019),2002,Havre,363.0
+04,Hedmark (-2019),2002,Havre,338.0
+05,Oppland (-2019),2002,Havre,324.0
+06,Buskerud (-2019),2002,Havre,344.0
+07,Vestfold (-2019),2002,Havre,369.0
+08,Telemark (-2019),2002,Havre,266.0
+09,Aust-Agder (-2019),2002,Havre,250.0
+10,Vest-Agder (-2019),2002,Havre,366.0
+11,Rogaland,2002,Havre,346.0
+12,Hordaland (-2019),2002,Havre,226.0
+16,Sør-Trøndelag (-2017),2002,Havre,305.0
+17,Nord-Trøndelag (-2017),2002,Havre,305.0
+02-03,Oslo og Akershus (-2019),2002,Rug og rughvete,277.0
+01,Østfold (-2019),2002,Rug og rughvete,562.0
+04,Hedmark (-2019),2002,Rug og rughvete,359.0
+05,Oppland (-2019),2002,Rug og rughvete,157.0
+06,Buskerud (-2019),2002,Rug og rughvete,293.0
+07,Vestfold (-2019),2002,Rug og rughvete,493.0
+09,Aust-Agder (-2019),2002,Rug og rughvete,259.0
+02-03,Oslo og Akershus (-2019),2003,Hvete,466.0
+01,Østfold (-2019),2003,Hvete,465.0
+04,Hedmark (-2019),2003,Hvete,529.0
+05,Oppland (-2019),2003,Hvete,468.0
+06,Buskerud (-2019),2003,Hvete,436.0
+07,Vestfold (-2019),2003,Hvete,441.0
+08,Telemark (-2019),2003,Hvete,383.0
+09,Aust-Agder (-2019),2003,Hvete,295.0
+11,Rogaland,2003,Hvete,425.0
+15,Møre og Romsdal,2003,Hvete,251.0
+02-03,Oslo og Akershus (-2019),2003,Bygg,370.0
+01,Østfold (-2019),2003,Bygg,327.0
+04,Hedmark (-2019),2003,Bygg,406.0
+05,Oppland (-2019),2003,Bygg,365.0
+06,Buskerud (-2019),2003,Bygg,346.0
+07,Vestfold (-2019),2003,Bygg,354.0
+08,Telemark (-2019),2003,Bygg,289.0
+09,Aust-Agder (-2019),2003,Bygg,242.0
+10,Vest-Agder (-2019),2003,Bygg,298.0
+11,Rogaland,2003,Bygg,395.0
+15,Møre og Romsdal,2003,Bygg,231.0
+16,Sør-Trøndelag (-2017),2003,Bygg,359.0
+17,Nord-Trøndelag (-2017),2003,Bygg,355.0
+02-03,Oslo og Akershus (-2019),2003,Havre,411.0
+01,Østfold (-2019),2003,Havre,390.0
+04,Hedmark (-2019),2003,Havre,383.0
+05,Oppland (-2019),2003,Havre,384.0
+06,Buskerud (-2019),2003,Havre,411.0
+07,Vestfold (-2019),2003,Havre,416.0
+08,Telemark (-2019),2003,Havre,356.0
+09,Aust-Agder (-2019),2003,Havre,271.0
+10,Vest-Agder (-2019),2003,Havre,405.0
+11,Rogaland,2003,Havre,370.0
+15,Møre og Romsdal,2003,Havre,189.0
+16,Sør-Trøndelag (-2017),2003,Havre,360.0
+17,Nord-Trøndelag (-2017),2003,Havre,326.0
+02-03,Oslo og Akershus (-2019),2003,Rug og rughvete,411.0
+01,Østfold (-2019),2003,Rug og rughvete,501.0
+04,Hedmark (-2019),2003,Rug og rughvete,563.0
+05,Oppland (-2019),2003,Rug og rughvete,399.0
+06,Buskerud (-2019),2003,Rug og rughvete,312.0
+07,Vestfold (-2019),2003,Rug og rughvete,472.0
+08,Telemark (-2019),2003,Rug og rughvete,285.0
+09,Aust-Agder (-2019),2003,Rug og rughvete,202.0
+02-03,Oslo og Akershus (-2019),2004,Hvete,469.0
+01,Østfold (-2019),2004,Hvete,495.0
+04,Hedmark (-2019),2004,Hvete,562.0
+05,Oppland (-2019),2004,Hvete,455.0
+06,Buskerud (-2019),2004,Hvete,436.0
+07,Vestfold (-2019),2004,Hvete,441.0
+08,Telemark (-2019),2004,Hvete,421.0
+09,Aust-Agder (-2019),2004,Hvete,333.0
+11,Rogaland,2004,Hvete,368.0
+16,Sør-Trøndelag (-2017),2004,Hvete,365.0
+17,Nord-Trøndelag (-2017),2004,Hvete,420.0
+02-03,Oslo og Akershus (-2019),2004,Bygg,440.0
+01,Østfold (-2019),2004,Bygg,421.0
+04,Hedmark (-2019),2004,Bygg,491.0
+05,Oppland (-2019),2004,Bygg,424.0
+06,Buskerud (-2019),2004,Bygg,381.0
+07,Vestfold (-2019),2004,Bygg,386.0
+08,Telemark (-2019),2004,Bygg,364.0
+09,Aust-Agder (-2019),2004,Bygg,305.0
+10,Vest-Agder (-2019),2004,Bygg,391.0
+11,Rogaland,2004,Bygg,445.0
+15,Møre og Romsdal,2004,Bygg,221.0
+16,Sør-Trøndelag (-2017),2004,Bygg,387.0
+17,Nord-Trøndelag (-2017),2004,Bygg,404.0
+02-03,Oslo og Akershus (-2019),2004,Havre,450.0
+01,Østfold (-2019),2004,Havre,428.0
+04,Hedmark (-2019),2004,Havre,427.0
+05,Oppland (-2019),2004,Havre,397.0
+06,Buskerud (-2019),2004,Havre,396.0
+07,Vestfold (-2019),2004,Havre,424.0
+08,Telemark (-2019),2004,Havre,420.0
+09,Aust-Agder (-2019),2004,Havre,363.0
+10,Vest-Agder (-2019),2004,Havre,443.0
+11,Rogaland,2004,Havre,364.0
+15,Møre og Romsdal,2004,Havre,171.0
+16,Sør-Trøndelag (-2017),2004,Havre,335.0
+17,Nord-Trøndelag (-2017),2004,Havre,295.0
+02-03,Oslo og Akershus (-2019),2004,Rug og rughvete,558.0
+01,Østfold (-2019),2004,Rug og rughvete,582.0
+04,Hedmark (-2019),2004,Rug og rughvete,652.0
+05,Oppland (-2019),2004,Rug og rughvete,302.0
+06,Buskerud (-2019),2004,Rug og rughvete,447.0
+07,Vestfold (-2019),2004,Rug og rughvete,616.0
+08,Telemark (-2019),2004,Rug og rughvete,539.0
+09,Aust-Agder (-2019),2004,Rug og rughvete,368.0
+16,Sør-Trøndelag (-2017),2004,Rug og rughvete,272.0
+17,Nord-Trøndelag (-2017),2004,Rug og rughvete,337.0
+02-03,Oslo og Akershus (-2019),2005,Hvete,492.0
+01,Østfold (-2019),2005,Hvete,496.0
+04,Hedmark (-2019),2005,Hvete,503.0
+05,Oppland (-2019),2005,Hvete,458.0
+06,Buskerud (-2019),2005,Hvete,481.0
+07,Vestfold (-2019),2005,Hvete,491.0
+08,Telemark (-2019),2005,Hvete,443.0
+11,Rogaland,2005,Hvete,500.0
+16,Sør-Trøndelag (-2017),2005,Hvete,384.0
+17,Nord-Trøndelag (-2017),2005,Hvete,399.0
+02-03,Oslo og Akershus (-2019),2005,Bygg,359.0
+01,Østfold (-2019),2005,Bygg,390.0
+04,Hedmark (-2019),2005,Bygg,398.0
+05,Oppland (-2019),2005,Bygg,361.0
+06,Buskerud (-2019),2005,Bygg,345.0
+07,Vestfold (-2019),2005,Bygg,377.0
+08,Telemark (-2019),2005,Bygg,320.0
+09,Aust-Agder (-2019),2005,Bygg,259.0
+10,Vest-Agder (-2019),2005,Bygg,320.0
+11,Rogaland,2005,Bygg,488.0
+15,Møre og Romsdal,2005,Bygg,233.0
+16,Sør-Trøndelag (-2017),2005,Bygg,349.0
+17,Nord-Trøndelag (-2017),2005,Bygg,318.0
+02-03,Oslo og Akershus (-2019),2005,Havre,380.0
+01,Østfold (-2019),2005,Havre,420.0
+04,Hedmark (-2019),2005,Havre,344.0
+05,Oppland (-2019),2005,Havre,343.0
+06,Buskerud (-2019),2005,Havre,384.0
+07,Vestfold (-2019),2005,Havre,410.0
+08,Telemark (-2019),2005,Havre,401.0
+09,Aust-Agder (-2019),2005,Havre,324.0
+10,Vest-Agder (-2019),2005,Havre,394.0
+11,Rogaland,2005,Havre,323.0
+16,Sør-Trøndelag (-2017),2005,Havre,305.0
+02-03,Oslo og Akershus (-2019),2005,Rug og rughvete,476.0
+01,Østfold (-2019),2005,Rug og rughvete,486.0
+04,Hedmark (-2019),2005,Rug og rughvete,549.0
+05,Oppland (-2019),2005,Rug og rughvete,323.0
+06,Buskerud (-2019),2005,Rug og rughvete,482.0
+07,Vestfold (-2019),2005,Rug og rughvete,560.0
+08,Telemark (-2019),2005,Rug og rughvete,487.0
+02-03,Oslo og Akershus (-2019),2006,Hvete,398.0
+01,Østfold (-2019),2006,Hvete,472.0
+04,Hedmark (-2019),2006,Hvete,451.0
+05,Oppland (-2019),2006,Hvete,368.0
+06,Buskerud (-2019),2006,Hvete,338.0
+07,Vestfold (-2019),2006,Hvete,361.0
+08,Telemark (-2019),2006,Hvete,357.0
+09,Aust-Agder (-2019),2006,Hvete,293.0
+10,Vest-Agder (-2019),2006,Hvete,297.0
+11,Rogaland,2006,Hvete,368.0
+16,Sør-Trøndelag (-2017),2006,Hvete,393.0
+17,Nord-Trøndelag (-2017),2006,Hvete,361.0
+02-03,Oslo og Akershus (-2019),2006,Bygg,329.0
+01,Østfold (-2019),2006,Bygg,365.0
+04,Hedmark (-2019),2006,Bygg,396.0
+05,Oppland (-2019),2006,Bygg,297.0
+06,Buskerud (-2019),2006,Bygg,281.0
+07,Vestfold (-2019),2006,Bygg,332.0
+08,Telemark (-2019),2006,Bygg,298.0
+09,Aust-Agder (-2019),2006,Bygg,267.0
+10,Vest-Agder (-2019),2006,Bygg,298.0
+11,Rogaland,2006,Bygg,498.0
+12,Hordaland (-2019),2006,Bygg,313.0
+14,Sogn og Fjordane (-2019),2006,Bygg,182.0
+15,Møre og Romsdal,2006,Bygg,246.0
+16,Sør-Trøndelag (-2017),2006,Bygg,373.0
+17,Nord-Trøndelag (-2017),2006,Bygg,370.0
+02-03,Oslo og Akershus (-2019),2006,Havre,329.0
+01,Østfold (-2019),2006,Havre,382.0
+04,Hedmark (-2019),2006,Havre,355.0
+05,Oppland (-2019),2006,Havre,211.0
+06,Buskerud (-2019),2006,Havre,257.0
+07,Vestfold (-2019),2006,Havre,347.0
+08,Telemark (-2019),2006,Havre,323.0
+09,Aust-Agder (-2019),2006,Havre,300.0
+10,Vest-Agder (-2019),2006,Havre,340.0
+11,Rogaland,2006,Havre,344.0
+15,Møre og Romsdal,2006,Havre,268.0
+16,Sør-Trøndelag (-2017),2006,Havre,361.0
+17,Nord-Trøndelag (-2017),2006,Havre,323.0
+02-03,Oslo og Akershus (-2019),2006,Rug og rughvete,388.0
+01,Østfold (-2019),2006,Rug og rughvete,559.0
+04,Hedmark (-2019),2006,Rug og rughvete,431.0
+05,Oppland (-2019),2006,Rug og rughvete,302.0
+06,Buskerud (-2019),2006,Rug og rughvete,268.0
+07,Vestfold (-2019),2006,Rug og rughvete,384.0
+08,Telemark (-2019),2006,Rug og rughvete,447.0
+17,Nord-Trøndelag (-2017),2006,Rug og rughvete,442.0
+02-03,Oslo og Akershus (-2019),2007,Hvete,457.0
+01,Østfold (-2019),2007,Hvete,436.0
+04,Hedmark (-2019),2007,Hvete,505.0
+05,Oppland (-2019),2007,Hvete,432.0
+06,Buskerud (-2019),2007,Hvete,408.0
+07,Vestfold (-2019),2007,Hvete,412.0
+08,Telemark (-2019),2007,Hvete,364.0
+11,Rogaland,2007,Hvete,259.0
+16,Sør-Trøndelag (-2017),2007,Hvete,507.0
+17,Nord-Trøndelag (-2017),2007,Hvete,458.0
+02-03,Oslo og Akershus (-2019),2007,Bygg,360.0
+01,Østfold (-2019),2007,Bygg,349.0
+04,Hedmark (-2019),2007,Bygg,445.0
+05,Oppland (-2019),2007,Bygg,383.0
+06,Buskerud (-2019),2007,Bygg,295.0
+07,Vestfold (-2019),2007,Bygg,318.0
+08,Telemark (-2019),2007,Bygg,250.0
+09,Aust-Agder (-2019),2007,Bygg,263.0
+10,Vest-Agder (-2019),2007,Bygg,247.0
+11,Rogaland,2007,Bygg,364.0
+15,Møre og Romsdal,2007,Bygg,227.0
+16,Sør-Trøndelag (-2017),2007,Bygg,315.0
+17,Nord-Trøndelag (-2017),2007,Bygg,272.0
+02-03,Oslo og Akershus (-2019),2007,Havre,409.0
+01,Østfold (-2019),2007,Havre,403.0
+04,Hedmark (-2019),2007,Havre,397.0
+05,Oppland (-2019),2007,Havre,370.0
+06,Buskerud (-2019),2007,Havre,323.0
+07,Vestfold (-2019),2007,Havre,371.0
+08,Telemark (-2019),2007,Havre,360.0
+09,Aust-Agder (-2019),2007,Havre,287.0
+10,Vest-Agder (-2019),2007,Havre,356.0
+11,Rogaland,2007,Havre,237.0
+16,Sør-Trøndelag (-2017),2007,Havre,283.0
+17,Nord-Trøndelag (-2017),2007,Havre,169.0
+02-03,Oslo og Akershus (-2019),2007,Rug og rughvete,578.0
+01,Østfold (-2019),2007,Rug og rughvete,487.0
+04,Hedmark (-2019),2007,Rug og rughvete,558.0
+05,Oppland (-2019),2007,Rug og rughvete,403.0
+06,Buskerud (-2019),2007,Rug og rughvete,440.0
+07,Vestfold (-2019),2007,Rug og rughvete,560.0
+08,Telemark (-2019),2007,Rug og rughvete,458.0
+17,Nord-Trøndelag (-2017),2007,Rug og rughvete,282.0
+02-03,Oslo og Akershus (-2019),2008,Hvete,489.0
+01,Østfold (-2019),2008,Hvete,513.0
+04,Hedmark (-2019),2008,Hvete,524.0
+05,Oppland (-2019),2008,Hvete,446.0
+06,Buskerud (-2019),2008,Hvete,404.0
+07,Vestfold (-2019),2008,Hvete,473.0
+08,Telemark (-2019),2008,Hvete,402.0
+16,Sør-Trøndelag (-2017),2008,Hvete,423.0
+17,Nord-Trøndelag (-2017),2008,Hvete,412.0
+02-03,Oslo og Akershus (-2019),2008,Bygg,418.0
+01,Østfold (-2019),2008,Bygg,428.0
+04,Hedmark (-2019),2008,Bygg,468.0
+05,Oppland (-2019),2008,Bygg,412.0
+06,Buskerud (-2019),2008,Bygg,356.0
+07,Vestfold (-2019),2008,Bygg,396.0
+08,Telemark (-2019),2008,Bygg,351.0
+09,Aust-Agder (-2019),2008,Bygg,260.0
+10,Vest-Agder (-2019),2008,Bygg,291.0
+11,Rogaland,2008,Bygg,421.0
+15,Møre og Romsdal,2008,Bygg,303.0
+16,Sør-Trøndelag (-2017),2008,Bygg,439.0
+17,Nord-Trøndelag (-2017),2008,Bygg,448.0
+02-03,Oslo og Akershus (-2019),2008,Havre,428.0
+01,Østfold (-2019),2008,Havre,445.0
+04,Hedmark (-2019),2008,Havre,423.0
+05,Oppland (-2019),2008,Havre,398.0
+06,Buskerud (-2019),2008,Havre,377.0
+07,Vestfold (-2019),2008,Havre,438.0
+08,Telemark (-2019),2008,Havre,384.0
+09,Aust-Agder (-2019),2008,Havre,337.0
+10,Vest-Agder (-2019),2008,Havre,333.0
+11,Rogaland,2008,Havre,328.0
+15,Møre og Romsdal,2008,Havre,210.0
+16,Sør-Trøndelag (-2017),2008,Havre,461.0
+17,Nord-Trøndelag (-2017),2008,Havre,365.0
+02-03,Oslo og Akershus (-2019),2008,Rug og rughvete,558.0
+01,Østfold (-2019),2008,Rug og rughvete,536.0
+04,Hedmark (-2019),2008,Rug og rughvete,627.0
+05,Oppland (-2019),2008,Rug og rughvete,374.0
+06,Buskerud (-2019),2008,Rug og rughvete,475.0
+07,Vestfold (-2019),2008,Rug og rughvete,678.0
+08,Telemark (-2019),2008,Rug og rughvete,550.0
+02-03,Oslo og Akershus (-2019),2009,Hvete,281.0
+01,Østfold (-2019),2009,Hvete,356.0
+04,Hedmark (-2019),2009,Hvete,383.0
+05,Oppland (-2019),2009,Hvete,339.0
+06,Buskerud (-2019),2009,Hvete,320.0
+07,Vestfold (-2019),2009,Hvete,342.0
+08,Telemark (-2019),2009,Hvete,330.0
+02-03,Oslo og Akershus (-2019),2009,Bygg,320.0
+01,Østfold (-2019),2009,Bygg,366.0
+04,Hedmark (-2019),2009,Bygg,356.0
+05,Oppland (-2019),2009,Bygg,331.0
+06,Buskerud (-2019),2009,Bygg,287.0
+07,Vestfold (-2019),2009,Bygg,339.0
+08,Telemark (-2019),2009,Bygg,300.0
+09,Aust-Agder (-2019),2009,Bygg,281.0
+10,Vest-Agder (-2019),2009,Bygg,370.0
+11,Rogaland,2009,Bygg,417.0
+15,Møre og Romsdal,2009,Bygg,248.0
+16,Sør-Trøndelag (-2017),2009,Bygg,360.0
+17,Nord-Trøndelag (-2017),2009,Bygg,372.0
+02-03,Oslo og Akershus (-2019),2009,Havre,338.0
+01,Østfold (-2019),2009,Havre,379.0
+04,Hedmark (-2019),2009,Havre,338.0
+05,Oppland (-2019),2009,Havre,333.0
+06,Buskerud (-2019),2009,Havre,315.0
+07,Vestfold (-2019),2009,Havre,339.0
+08,Telemark (-2019),2009,Havre,312.0
+09,Aust-Agder (-2019),2009,Havre,258.0
+10,Vest-Agder (-2019),2009,Havre,345.0
+11,Rogaland,2009,Havre,367.0
+16,Sør-Trøndelag (-2017),2009,Havre,354.0
+17,Nord-Trøndelag (-2017),2009,Havre,280.0
+02-03,Oslo og Akershus (-2019),2009,Rug og rughvete,310.0
+01,Østfold (-2019),2009,Rug og rughvete,395.0
+04,Hedmark (-2019),2009,Rug og rughvete,435.0
+05,Oppland (-2019),2009,Rug og rughvete,285.0
+06,Buskerud (-2019),2009,Rug og rughvete,309.0
+07,Vestfold (-2019),2009,Rug og rughvete,420.0
+08,Telemark (-2019),2009,Rug og rughvete,412.0
+02-03,Oslo og Akershus (-2019),2010,Hvete,425.0
+01,Østfold (-2019),2010,Hvete,486.0
+04,Hedmark (-2019),2010,Hvete,469.0
+05,Oppland (-2019),2010,Hvete,425.0
+06,Buskerud (-2019),2010,Hvete,432.0
+07,Vestfold (-2019),2010,Hvete,473.0
+08,Telemark (-2019),2010,Hvete,407.0
+09,Aust-Agder (-2019),2010,Hvete,398.0
+16,Sør-Trøndelag (-2017),2010,Hvete,393.0
+17,Nord-Trøndelag (-2017),2010,Hvete,344.0
+02-03,Oslo og Akershus (-2019),2010,Bygg,374.0
+01,Østfold (-2019),2010,Bygg,440.0
+04,Hedmark (-2019),2010,Bygg,413.0
+05,Oppland (-2019),2010,Bygg,364.0
+06,Buskerud (-2019),2010,Bygg,387.0
+07,Vestfold (-2019),2010,Bygg,464.0
+08,Telemark (-2019),2010,Bygg,402.0
+09,Aust-Agder (-2019),2010,Bygg,397.0
+10,Vest-Agder (-2019),2010,Bygg,302.0
+11,Rogaland,2010,Bygg,457.0
+16,Sør-Trøndelag (-2017),2010,Bygg,333.0
+17,Nord-Trøndelag (-2017),2010,Bygg,294.0
+02-03,Oslo og Akershus (-2019),2010,Havre,388.0
+01,Østfold (-2019),2010,Havre,456.0
+04,Hedmark (-2019),2010,Havre,347.0
+05,Oppland (-2019),2010,Havre,356.0
+06,Buskerud (-2019),2010,Havre,382.0
+07,Vestfold (-2019),2010,Havre,474.0
+08,Telemark (-2019),2010,Havre,369.0
+09,Aust-Agder (-2019),2010,Havre,344.0
+10,Vest-Agder (-2019),2010,Havre,337.0
+11,Rogaland,2010,Havre,476.0
+16,Sør-Trøndelag (-2017),2010,Havre,340.0
+17,Nord-Trøndelag (-2017),2010,Havre,264.0
+02-03,Oslo og Akershus (-2019),2010,Rug og rughvete,457.0
+01,Østfold (-2019),2010,Rug og rughvete,509.0
+04,Hedmark (-2019),2010,Rug og rughvete,624.0
+05,Oppland (-2019),2010,Rug og rughvete,397.0
+06,Buskerud (-2019),2010,Rug og rughvete,365.0
+07,Vestfold (-2019),2010,Rug og rughvete,550.0
+08,Telemark (-2019),2010,Rug og rughvete,506.0
+02-03,Oslo og Akershus (-2019),2011,Hvete,385.0
+01,Østfold (-2019),2011,Hvete,375.0
+04,Hedmark (-2019),2011,Hvete,459.0
+05,Oppland (-2019),2011,Hvete,415.0
+06,Buskerud (-2019),2011,Hvete,349.0
+07,Vestfold (-2019),2011,Hvete,381.0
+08,Telemark (-2019),2011,Hvete,279.0
+09,Aust-Agder (-2019),2011,Hvete,259.0
+10,Vest-Agder (-2019),2011,Hvete,348.0
+11,Rogaland,2011,Hvete,279.0
+16,Sør-Trøndelag (-2017),2011,Hvete,359.0
+17,Nord-Trøndelag (-2017),2011,Hvete,298.0
+02-03,Oslo og Akershus (-2019),2011,Bygg,350.0
+01,Østfold (-2019),2011,Bygg,372.0
+04,Hedmark (-2019),2011,Bygg,362.0
+05,Oppland (-2019),2011,Bygg,301.0
+06,Buskerud (-2019),2011,Bygg,285.0
+07,Vestfold (-2019),2011,Bygg,356.0
+08,Telemark (-2019),2011,Bygg,213.0
+09,Aust-Agder (-2019),2011,Bygg,217.0
+10,Vest-Agder (-2019),2011,Bygg,281.0
+11,Rogaland,2011,Bygg,290.0
+15,Møre og Romsdal,2011,Bygg,390.0
+16,Sør-Trøndelag (-2017),2011,Bygg,315.0
+17,Nord-Trøndelag (-2017),2011,Bygg,323.0
+18,Nordland - Nordlánnda,2011,Bygg,194.0
+02-03,Oslo og Akershus (-2019),2011,Havre,340.0
+01,Østfold (-2019),2011,Havre,370.0
+04,Hedmark (-2019),2011,Havre,287.0
+05,Oppland (-2019),2011,Havre,291.0
+06,Buskerud (-2019),2011,Havre,285.0
+07,Vestfold (-2019),2011,Havre,336.0
+08,Telemark (-2019),2011,Havre,233.0
+09,Aust-Agder (-2019),2011,Havre,147.0
+10,Vest-Agder (-2019),2011,Havre,215.0
+11,Rogaland,2011,Havre,289.0
+15,Møre og Romsdal,2011,Havre,309.0
+16,Sør-Trøndelag (-2017),2011,Havre,343.0
+17,Nord-Trøndelag (-2017),2011,Havre,310.0
+02-03,Oslo og Akershus (-2019),2011,Rug og rughvete,333.0
+01,Østfold (-2019),2011,Rug og rughvete,255.0
+04,Hedmark (-2019),2011,Rug og rughvete,477.0
+05,Oppland (-2019),2011,Rug og rughvete,235.0
+06,Buskerud (-2019),2011,Rug og rughvete,216.0
+07,Vestfold (-2019),2011,Rug og rughvete,350.0
+08,Telemark (-2019),2011,Rug og rughvete,211.0
+11,Rogaland,2011,Rug og rughvete,215.0
+02-03,Oslo og Akershus (-2019),2012,Hvete,357.0
+01,Østfold (-2019),2012,Hvete,403.0
+04,Hedmark (-2019),2012,Hvete,465.0
+05,Oppland (-2019),2012,Hvete,455.0
+06,Buskerud (-2019),2012,Hvete,409.0
+07,Vestfold (-2019),2012,Hvete,430.0
+08,Telemark (-2019),2012,Hvete,376.0
+16,Sør-Trøndelag (-2017),2012,Hvete,420.0
+17,Nord-Trøndelag (-2017),2012,Hvete,345.0
+02-03,Oslo og Akershus (-2019),2012,Bygg,306.0
+01,Østfold (-2019),2012,Bygg,382.0
+04,Hedmark (-2019),2012,Bygg,401.0
+05,Oppland (-2019),2012,Bygg,366.0
+06,Buskerud (-2019),2012,Bygg,340.0
+07,Vestfold (-2019),2012,Bygg,392.0
+08,Telemark (-2019),2012,Bygg,331.0
+09,Aust-Agder (-2019),2012,Bygg,338.0
+10,Vest-Agder (-2019),2012,Bygg,333.0
+11,Rogaland,2012,Bygg,379.0
+15,Møre og Romsdal,2012,Bygg,305.0
+16,Sør-Trøndelag (-2017),2012,Bygg,351.0
+17,Nord-Trøndelag (-2017),2012,Bygg,392.0
+18,Nordland - Nordlánnda,2012,Bygg,222.0
+02-03,Oslo og Akershus (-2019),2012,Havre,320.0
+01,Østfold (-2019),2012,Havre,365.0
+04,Hedmark (-2019),2012,Havre,319.0
+05,Oppland (-2019),2012,Havre,361.0
+06,Buskerud (-2019),2012,Havre,338.0
+07,Vestfold (-2019),2012,Havre,361.0
+08,Telemark (-2019),2012,Havre,335.0
+09,Aust-Agder (-2019),2012,Havre,250.0
+10,Vest-Agder (-2019),2012,Havre,315.0
+11,Rogaland,2012,Havre,305.0
+15,Møre og Romsdal,2012,Havre,267.0
+16,Sør-Trøndelag (-2017),2012,Havre,342.0
+17,Nord-Trøndelag (-2017),2012,Havre,300.0
+18,Nordland - Nordlánnda,2012,Havre,68.0
+02-03,Oslo og Akershus (-2019),2012,Rug og rughvete,266.0
+01,Østfold (-2019),2012,Rug og rughvete,301.0
+04,Hedmark (-2019),2012,Rug og rughvete,376.0
+05,Oppland (-2019),2012,Rug og rughvete,107.0
+06,Buskerud (-2019),2012,Rug og rughvete,238.0
+07,Vestfold (-2019),2012,Rug og rughvete,523.0
+02-03,Oslo og Akershus (-2019),2013,Hvete,385.0
+01,Østfold (-2019),2013,Hvete,380.0
+04,Hedmark (-2019),2013,Hvete,448.0
+05,Oppland (-2019),2013,Hvete,434.0
+06,Buskerud (-2019),2013,Hvete,419.0
+07,Vestfold (-2019),2013,Hvete,354.0
+08,Telemark (-2019),2013,Hvete,295.0
+09,Aust-Agder (-2019),2013,Hvete,303.0
+16,Sør-Trøndelag (-2017),2013,Hvete,264.0
+17,Nord-Trøndelag (-2017),2013,Hvete,244.0
+02-03,Oslo og Akershus (-2019),2013,Bygg,305.0
+01,Østfold (-2019),2013,Bygg,313.0
+04,Hedmark (-2019),2013,Bygg,391.0
+05,Oppland (-2019),2013,Bygg,305.0
+06,Buskerud (-2019),2013,Bygg,312.0
+07,Vestfold (-2019),2013,Bygg,286.0
+08,Telemark (-2019),2013,Bygg,237.0
+09,Aust-Agder (-2019),2013,Bygg,225.0
+10,Vest-Agder (-2019),2013,Bygg,249.0
+11,Rogaland,2013,Bygg,369.0
+16,Sør-Trøndelag (-2017),2013,Bygg,305.0
+17,Nord-Trøndelag (-2017),2013,Bygg,319.0
+02-03,Oslo og Akershus (-2019),2013,Havre,320.0
+01,Østfold (-2019),2013,Havre,316.0
+04,Hedmark (-2019),2013,Havre,369.0
+05,Oppland (-2019),2013,Havre,328.0
+06,Buskerud (-2019),2013,Havre,308.0
+07,Vestfold (-2019),2013,Havre,309.0
+08,Telemark (-2019),2013,Havre,284.0
+09,Aust-Agder (-2019),2013,Havre,203.0
+10,Vest-Agder (-2019),2013,Havre,304.0
+11,Rogaland,2013,Havre,302.0
+16,Sør-Trøndelag (-2017),2013,Havre,355.0
+17,Nord-Trøndelag (-2017),2013,Havre,315.0
+02-03,Oslo og Akershus (-2019),2013,Rug og rughvete,409.0
+01,Østfold (-2019),2013,Rug og rughvete,412.0
+04,Hedmark (-2019),2013,Rug og rughvete,529.0
+05,Oppland (-2019),2013,Rug og rughvete,465.0
+06,Buskerud (-2019),2013,Rug og rughvete,365.0
+07,Vestfold (-2019),2013,Rug og rughvete,414.0
+02-03,Oslo og Akershus (-2019),2014,Hvete,516.0
+01,Østfold (-2019),2014,Hvete,502.0
+04,Hedmark (-2019),2014,Hvete,479.0
+05,Oppland (-2019),2014,Hvete,524.0
+06,Buskerud (-2019),2014,Hvete,505.0
+07,Vestfold (-2019),2014,Hvete,462.0
+08,Telemark (-2019),2014,Hvete,406.0
+09,Aust-Agder (-2019),2014,Hvete,382.0
+16,Sør-Trøndelag (-2017),2014,Hvete,450.0
+17,Nord-Trøndelag (-2017),2014,Hvete,325.0
+02-03,Oslo og Akershus (-2019),2014,Bygg,416.0
+01,Østfold (-2019),2014,Bygg,448.0
+04,Hedmark (-2019),2014,Bygg,433.0
+05,Oppland (-2019),2014,Bygg,431.0
+06,Buskerud (-2019),2014,Bygg,442.0
+07,Vestfold (-2019),2014,Bygg,448.0
+08,Telemark (-2019),2014,Bygg,383.0
+09,Aust-Agder (-2019),2014,Bygg,272.0
+10,Vest-Agder (-2019),2014,Bygg,187.0
+11,Rogaland,2014,Bygg,452.0
+12,Hordaland (-2019),2014,Bygg,454.0
+15,Møre og Romsdal,2014,Bygg,346.0
+16,Sør-Trøndelag (-2017),2014,Bygg,402.0
+17,Nord-Trøndelag (-2017),2014,Bygg,386.0
+18,Nordland - Nordlánnda,2014,Bygg,197.0
+02-03,Oslo og Akershus (-2019),2014,Havre,406.0
+01,Østfold (-2019),2014,Havre,403.0
+04,Hedmark (-2019),2014,Havre,370.0
+05,Oppland (-2019),2014,Havre,392.0
+06,Buskerud (-2019),2014,Havre,411.0
+07,Vestfold (-2019),2014,Havre,420.0
+08,Telemark (-2019),2014,Havre,354.0
+09,Aust-Agder (-2019),2014,Havre,299.0
+10,Vest-Agder (-2019),2014,Havre,298.0
+11,Rogaland,2014,Havre,449.0
+15,Møre og Romsdal,2014,Havre,291.0
+16,Sør-Trøndelag (-2017),2014,Havre,353.0
+17,Nord-Trøndelag (-2017),2014,Havre,345.0
+18,Nordland - Nordlánnda,2014,Havre,106.0
+02-03,Oslo og Akershus (-2019),2014,Rug og rughvete,637.0
+01,Østfold (-2019),2014,Rug og rughvete,579.0
+04,Hedmark (-2019),2014,Rug og rughvete,682.0
+05,Oppland (-2019),2014,Rug og rughvete,551.0
+06,Buskerud (-2019),2014,Rug og rughvete,516.0
+07,Vestfold (-2019),2014,Rug og rughvete,683.0
+08,Telemark (-2019),2014,Rug og rughvete,499.0
+16,Sør-Trøndelag (-2017),2014,Rug og rughvete,159.0
+17,Nord-Trøndelag (-2017),2014,Rug og rughvete,241.0
+02-03,Oslo og Akershus (-2019),2015,Hvete,618.0
+01,Østfold (-2019),2015,Hvete,610.0
+04,Hedmark (-2019),2015,Hvete,552.0
+05,Oppland (-2019),2015,Hvete,547.0
+06,Buskerud (-2019),2015,Hvete,573.0
+07,Vestfold (-2019),2015,Hvete,513.0
+08,Telemark (-2019),2015,Hvete,470.0
+09,Aust-Agder (-2019),2015,Hvete,497.0
+15,Møre og Romsdal,2015,Hvete,346.0
+16,Sør-Trøndelag (-2017),2015,Hvete,477.0
+17,Nord-Trøndelag (-2017),2015,Hvete,432.0
+02-03,Oslo og Akershus (-2019),2015,Bygg,466.0
+01,Østfold (-2019),2015,Bygg,469.0
+04,Hedmark (-2019),2015,Bygg,488.0
+05,Oppland (-2019),2015,Bygg,462.0
+06,Buskerud (-2019),2015,Bygg,461.0
+07,Vestfold (-2019),2015,Bygg,438.0
+08,Telemark (-2019),2015,Bygg,409.0
+09,Aust-Agder (-2019),2015,Bygg,308.0
+10,Vest-Agder (-2019),2015,Bygg,303.0
+11,Rogaland,2015,Bygg,311.0
+12,Hordaland (-2019),2015,Bygg,272.0
+15,Møre og Romsdal,2015,Bygg,284.0
+16,Sør-Trøndelag (-2017),2015,Bygg,341.0
+17,Nord-Trøndelag (-2017),2015,Bygg,302.0
+18,Nordland - Nordlánnda,2015,Bygg,195.0
+02-03,Oslo og Akershus (-2019),2015,Havre,487.0
+01,Østfold (-2019),2015,Havre,501.0
+04,Hedmark (-2019),2015,Havre,403.0
+05,Oppland (-2019),2015,Havre,443.0
+06,Buskerud (-2019),2015,Havre,466.0
+07,Vestfold (-2019),2015,Havre,430.0
+08,Telemark (-2019),2015,Havre,408.0
+09,Aust-Agder (-2019),2015,Havre,368.0
+10,Vest-Agder (-2019),2015,Havre,376.0
+11,Rogaland,2015,Havre,341.0
+12,Hordaland (-2019),2015,Havre,100.0
+15,Møre og Romsdal,2015,Havre,217.0
+16,Sør-Trøndelag (-2017),2015,Havre,359.0
+17,Nord-Trøndelag (-2017),2015,Havre,302.0
+18,Nordland - Nordlánnda,2015,Havre,210.0
+02-03,Oslo og Akershus (-2019),2015,Rug og rughvete,650.0
+01,Østfold (-2019),2015,Rug og rughvete,631.0
+04,Hedmark (-2019),2015,Rug og rughvete,592.0
+05,Oppland (-2019),2015,Rug og rughvete,574.0
+06,Buskerud (-2019),2015,Rug og rughvete,548.0
+07,Vestfold (-2019),2015,Rug og rughvete,714.0
+08,Telemark (-2019),2015,Rug og rughvete,652.0
+16,Sør-Trøndelag (-2017),2015,Rug og rughvete,309.0
+17,Nord-Trøndelag (-2017),2015,Rug og rughvete,80.0
+02-03,Oslo og Akershus (-2019),2016,Hvete,480.0
+01,Østfold (-2019),2016,Hvete,455.0
+04,Hedmark (-2019),2016,Hvete,524.0
+05,Oppland (-2019),2016,Hvete,489.0
+06,Buskerud (-2019),2016,Hvete,467.0
+07,Vestfold (-2019),2016,Hvete,431.0
+08,Telemark (-2019),2016,Hvete,410.0
+09,Aust-Agder (-2019),2016,Hvete,249.0
+11,Rogaland,2016,Hvete,368.0
+16,Sør-Trøndelag (-2017),2016,Hvete,257.0
+17,Nord-Trøndelag (-2017),2016,Hvete,340.0
+02-03,Oslo og Akershus (-2019),2016,Bygg,500.0
+01,Østfold (-2019),2016,Bygg,496.0
+04,Hedmark (-2019),2016,Bygg,501.0
+05,Oppland (-2019),2016,Bygg,466.0
+06,Buskerud (-2019),2016,Bygg,454.0
+07,Vestfold (-2019),2016,Bygg,496.0
+08,Telemark (-2019),2016,Bygg,409.0
+09,Aust-Agder (-2019),2016,Bygg,239.0
+10,Vest-Agder (-2019),2016,Bygg,264.0
+11,Rogaland,2016,Bygg,403.0
+15,Møre og Romsdal,2016,Bygg,334.0
+16,Sør-Trøndelag (-2017),2016,Bygg,419.0
+17,Nord-Trøndelag (-2017),2016,Bygg,405.0
+18,Nordland - Nordlánnda,2016,Bygg,338.0
+02-03,Oslo og Akershus (-2019),2016,Havre,487.0
+01,Østfold (-2019),2016,Havre,495.0
+04,Hedmark (-2019),2016,Havre,457.0
+05,Oppland (-2019),2016,Havre,469.0
+06,Buskerud (-2019),2016,Havre,465.0
+07,Vestfold (-2019),2016,Havre,478.0
+08,Telemark (-2019),2016,Havre,446.0
+09,Aust-Agder (-2019),2016,Havre,301.0
+10,Vest-Agder (-2019),2016,Havre,363.0
+11,Rogaland,2016,Havre,469.0
+15,Møre og Romsdal,2016,Havre,254.0
+16,Sør-Trøndelag (-2017),2016,Havre,384.0
+17,Nord-Trøndelag (-2017),2016,Havre,388.0
+18,Nordland - Nordlánnda,2016,Havre,200.0
+02-03,Oslo og Akershus (-2019),2016,Rug og rughvete,356.0
+01,Østfold (-2019),2016,Rug og rughvete,360.0
+04,Hedmark (-2019),2016,Rug og rughvete,815.0
+05,Oppland (-2019),2016,Rug og rughvete,831.0
+06,Buskerud (-2019),2016,Rug og rughvete,486.0
+07,Vestfold (-2019),2016,Rug og rughvete,572.0
+08,Telemark (-2019),2016,Rug og rughvete,433.0
+02-03,Oslo og Akershus (-2019),2017,Hvete,557.0
+01,Østfold (-2019),2017,Hvete,579.0
+04,Hedmark (-2019),2017,Hvete,562.0
+05,Oppland (-2019),2017,Hvete,511.0
+06,Buskerud (-2019),2017,Hvete,488.0
+07,Vestfold (-2019),2017,Hvete,427.0
+08,Telemark (-2019),2017,Hvete,378.0
+09,Aust-Agder (-2019),2017,Hvete,303.0
+10,Vest-Agder (-2019),2017,Hvete,213.0
+11,Rogaland,2017,Hvete,298.0
+15,Møre og Romsdal,2017,Hvete,228.0
+16,Sør-Trøndelag (-2017),2017,Hvete,326.0
+17,Nord-Trøndelag (-2017),2017,Hvete,467.0
+02-03,Oslo og Akershus (-2019),2017,Bygg,450.0
+01,Østfold (-2019),2017,Bygg,489.0
+04,Hedmark (-2019),2017,Bygg,507.0
+05,Oppland (-2019),2017,Bygg,435.0
+06,Buskerud (-2019),2017,Bygg,386.0
+07,Vestfold (-2019),2017,Bygg,348.0
+08,Telemark (-2019),2017,Bygg,286.0
+09,Aust-Agder (-2019),2017,Bygg,296.0
+10,Vest-Agder (-2019),2017,Bygg,295.0
+11,Rogaland,2017,Bygg,344.0
+15,Møre og Romsdal,2017,Bygg,150.0
+16,Sør-Trøndelag (-2017),2017,Bygg,349.0
+17,Nord-Trøndelag (-2017),2017,Bygg,379.0
+18,Nordland - Nordlánnda,2017,Bygg,280.0
+02-03,Oslo og Akershus (-2019),2017,Havre,435.0
+01,Østfold (-2019),2017,Havre,461.0
+04,Hedmark (-2019),2017,Havre,436.0
+05,Oppland (-2019),2017,Havre,406.0
+06,Buskerud (-2019),2017,Havre,365.0
+07,Vestfold (-2019),2017,Havre,328.0
+08,Telemark (-2019),2017,Havre,316.0
+09,Aust-Agder (-2019),2017,Havre,301.0
+10,Vest-Agder (-2019),2017,Havre,302.0
+11,Rogaland,2017,Havre,284.0
+15,Møre og Romsdal,2017,Havre,236.0
+16,Sør-Trøndelag (-2017),2017,Havre,385.0
+17,Nord-Trøndelag (-2017),2017,Havre,382.0
+18,Nordland - Nordlánnda,2017,Havre,223.0
+02-03,Oslo og Akershus (-2019),2017,Rug og rughvete,575.0
+01,Østfold (-2019),2017,Rug og rughvete,607.0
+04,Hedmark (-2019),2017,Rug og rughvete,582.0
+05,Oppland (-2019),2017,Rug og rughvete,613.0
+06,Buskerud (-2019),2017,Rug og rughvete,554.0
+07,Vestfold (-2019),2017,Rug og rughvete,656.0
+08,Telemark (-2019),2017,Rug og rughvete,592.0
+16,Sør-Trøndelag (-2017),2017,Rug og rughvete,200.0
+02-03,Oslo og Akershus (-2019),2018,Hvete,201.0
+01,Østfold (-2019),2018,Hvete,229.0
+04,Hedmark (-2019),2018,Hvete,316.0
+05,Oppland (-2019),2018,Hvete,233.0
+06,Buskerud (-2019),2018,Hvete,212.0
+07,Vestfold (-2019),2018,Hvete,242.0
+08,Telemark (-2019),2018,Hvete,218.0
+09,Aust-Agder (-2019),2018,Hvete,229.0
+11,Rogaland,2018,Hvete,47.0
+50,Trøndelag - Trööndelage,2018,Hvete,307.0
+02-03,Oslo og Akershus (-2019),2018,Bygg,222.0
+01,Østfold (-2019),2018,Bygg,246.0
+04,Hedmark (-2019),2018,Bygg,199.0
+05,Oppland (-2019),2018,Bygg,157.0
+06,Buskerud (-2019),2018,Bygg,121.0
+07,Vestfold (-2019),2018,Bygg,269.0
+08,Telemark (-2019),2018,Bygg,275.0
+11,Rogaland,2018,Bygg,96.0
+50,Trøndelag - Trööndelage,2018,Bygg,165.0
+02-03,Oslo og Akershus (-2019),2018,Havre,235.0
+01,Østfold (-2019),2018,Havre,257.0
+04,Hedmark (-2019),2018,Havre,341.0
+05,Oppland (-2019),2018,Havre,222.0
+06,Buskerud (-2019),2018,Havre,213.0
+07,Vestfold (-2019),2018,Havre,269.0
+08,Telemark (-2019),2018,Havre,259.0
+09,Aust-Agder (-2019),2018,Havre,222.0
+10,Vest-Agder (-2019),2018,Havre,257.0
+11,Rogaland,2018,Havre,408.0
+12,Hordaland (-2019),2018,Havre,247.0
+15,Møre og Romsdal,2018,Havre,119.0
+50,Trøndelag - Trööndelage,2018,Havre,366.0
+18,Nordland - Nordlánnda,2018,Havre,206.0
+02-03,Oslo og Akershus (-2019),2018,Rug og rughvete,203.0
+01,Østfold (-2019),2018,Rug og rughvete,225.0
+04,Hedmark (-2019),2018,Rug og rughvete,277.0
+05,Oppland (-2019),2018,Rug og rughvete,164.0
+06,Buskerud (-2019),2018,Rug og rughvete,179.0
+07,Vestfold (-2019),2018,Rug og rughvete,211.0
+08,Telemark (-2019),2018,Rug og rughvete,190.0
+09,Aust-Agder (-2019),2018,Rug og rughvete,92.0
+10,Vest-Agder (-2019),2018,Rug og rughvete,230.0
+11,Rogaland,2018,Rug og rughvete,310.0
+15,Møre og Romsdal,2018,Rug og rughvete,70.0
+50,Trøndelag - Trööndelage,2018,Rug og rughvete,304.0
+18,Nordland - Nordlánnda,2018,Rug og rughvete,94.0
+02-03,Oslo og Akershus (-2019),2019,Hvete,600.0
+01,Østfold (-2019),2019,Hvete,627.0
+04,Hedmark (-2019),2019,Hvete,525.0
+05,Oppland (-2019),2019,Hvete,431.0
+06,Buskerud (-2019),2019,Hvete,460.0
+07,Vestfold (-2019),2019,Hvete,499.0
+08,Telemark (-2019),2019,Hvete,453.0
+09,Aust-Agder (-2019),2019,Hvete,325.0
+10,Vest-Agder (-2019),2019,Hvete,210.0
+11,Rogaland,2019,Hvete,251.0
+15,Møre og Romsdal,2019,Hvete,357.0
+50,Trøndelag - Trööndelage,2019,Hvete,456.0
+18,Nordland - Nordlánnda,2019,Hvete,364.0
+02-03,Oslo og Akershus (-2019),2019,Bygg,458.0
+01,Østfold (-2019),2019,Bygg,528.0
+04,Hedmark (-2019),2019,Bygg,432.0
+05,Oppland (-2019),2019,Bygg,341.0
+06,Buskerud (-2019),2019,Bygg,382.0
+07,Vestfold (-2019),2019,Bygg,490.0
+08,Telemark (-2019),2019,Bygg,409.0
+09,Aust-Agder (-2019),2019,Bygg,299.0
+10,Vest-Agder (-2019),2019,Bygg,333.0
+11,Rogaland,2019,Bygg,448.0
+15,Møre og Romsdal,2019,Bygg,160.0
+50,Trøndelag - Trööndelage,2019,Bygg,430.0
+18,Nordland - Nordlánnda,2019,Bygg,235.0
+02-03,Oslo og Akershus (-2019),2019,Havre,447.0
+01,Østfold (-2019),2019,Havre,481.0
+04,Hedmark (-2019),2019,Havre,376.0
+05,Oppland (-2019),2019,Havre,306.0
+06,Buskerud (-2019),2019,Havre,333.0
+07,Vestfold (-2019),2019,Havre,439.0
+08,Telemark (-2019),2019,Havre,355.0
+09,Aust-Agder (-2019),2019,Havre,284.0
+10,Vest-Agder (-2019),2019,Havre,390.0
+11,Rogaland,2019,Havre,422.0
+15,Møre og Romsdal,2019,Havre,166.0
+50,Trøndelag - Trööndelage,2019,Havre,402.0
+18,Nordland - Nordlánnda,2019,Havre,245.0
+02-03,Oslo og Akershus (-2019),2019,Rug og rughvete,562.0
+01,Østfold (-2019),2019,Rug og rughvete,515.0
+04,Hedmark (-2019),2019,Rug og rughvete,601.0
+05,Oppland (-2019),2019,Rug og rughvete,573.0
+06,Buskerud (-2019),2019,Rug og rughvete,414.0
+07,Vestfold (-2019),2019,Rug og rughvete,581.0
+08,Telemark (-2019),2019,Rug og rughvete,461.0
+11,Rogaland,2019,Rug og rughvete,860.0
+50,Trøndelag - Trööndelage,2019,Rug og rughvete,327.0
+03+30,Oslo og Viken (2020-2023),2020,Hvete,479.0
+34,Innlandet,2020,Hvete,557.0
+38,Vestfold og Telemark (2020-2023),2020,Hvete,504.0
+42,Agder,2020,Hvete,359.0
+50,Trøndelag - Trööndelage,2020,Hvete,364.0
+03+30,Oslo og Viken (2020-2023),2020,Bygg,488.0
+34,Innlandet,2020,Bygg,540.0
+38,Vestfold og Telemark (2020-2023),2020,Bygg,507.0
+42,Agder,2020,Bygg,485.0
+11,Rogaland,2020,Bygg,496.0
+15,Møre og Romsdal,2020,Bygg,311.0
+50,Trøndelag - Trööndelage,2020,Bygg,333.0
+18,Nordland - Nordlánnda,2020,Bygg,225.0
+03+30,Oslo og Viken (2020-2023),2020,Havre,474.0
+34,Innlandet,2020,Havre,474.0
+38,Vestfold og Telemark (2020-2023),2020,Havre,477.0
+42,Agder,2020,Havre,428.0
+11,Rogaland,2020,Havre,532.0
+15,Møre og Romsdal,2020,Havre,185.0
+50,Trøndelag - Trööndelage,2020,Havre,310.0
+18,Nordland - Nordlánnda,2020,Havre,180.0
+03+30,Oslo og Viken (2020-2023),2020,Rug og rughvete,504.0
+34,Innlandet,2020,Rug og rughvete,623.0
+38,Vestfold og Telemark (2020-2023),2020,Rug og rughvete,566.0
+50,Trøndelag - Trööndelage,2020,Rug og rughvete,607.0
+03+30,Oslo og Viken (2020-2023),2021,Hvete,416.0
+34,Innlandet,2021,Hvete,473.0
+38,Vestfold og Telemark (2020-2023),2021,Hvete,383.0
+11,Rogaland,2021,Hvete,423.0
+50,Trøndelag - Trööndelage,2021,Hvete,381.0
+03+30,Oslo og Viken (2020-2023),2021,Bygg,436.0
+34,Innlandet,2021,Bygg,448.0
+38,Vestfold og Telemark (2020-2023),2021,Bygg,406.0
+42,Agder,2021,Bygg,293.0
+11,Rogaland,2021,Bygg,571.0
+15,Møre og Romsdal,2021,Bygg,402.0
+50,Trøndelag - Trööndelage,2021,Bygg,394.0
+18,Nordland - Nordlánnda,2021,Bygg,238.0
+03+30,Oslo og Viken (2020-2023),2021,Havre,401.0
+34,Innlandet,2021,Havre,393.0
+38,Vestfold og Telemark (2020-2023),2021,Havre,361.0
+42,Agder,2021,Havre,419.0
+11,Rogaland,2021,Havre,614.0
+15,Møre og Romsdal,2021,Havre,448.0
+50,Trøndelag - Trööndelage,2021,Havre,341.0
+03+30,Oslo og Viken (2020-2023),2021,Rug og rughvete,414.0
+34,Innlandet,2021,Rug og rughvete,543.0
+38,Vestfold og Telemark (2020-2023),2021,Rug og rughvete,538.0
+11,Rogaland,2021,Rug og rughvete,867.0
+50,Trøndelag - Trööndelage,2021,Rug og rughvete,231.0
+03+30,Oslo og Viken (2020-2023),2022,Hvete,532.0
+34,Innlandet,2022,Hvete,589.0
+38,Vestfold og Telemark (2020-2023),2022,Hvete,501.0
+42,Agder,2022,Hvete,469.0
+11,Rogaland,2022,Hvete,508.0
+50,Trøndelag - Trööndelage,2022,Hvete,440.0
+03+30,Oslo og Viken (2020-2023),2022,Bygg,552.0
+34,Innlandet,2022,Bygg,570.0
+38,Vestfold og Telemark (2020-2023),2022,Bygg,521.0
+42,Agder,2022,Bygg,425.0
+11,Rogaland,2022,Bygg,566.0
+15,Møre og Romsdal,2022,Bygg,353.0
+50,Trøndelag - Trööndelage,2022,Bygg,344.0
+18,Nordland - Nordlánnda,2022,Bygg,307.0
+03+30,Oslo og Viken (2020-2023),2022,Havre,532.0
+34,Innlandet,2022,Havre,509.0
+38,Vestfold og Telemark (2020-2023),2022,Havre,466.0
+42,Agder,2022,Havre,442.0
+11,Rogaland,2022,Havre,596.0
+15,Møre og Romsdal,2022,Havre,306.0
+50,Trøndelag - Trööndelage,2022,Havre,344.0
+18,Nordland - Nordlánnda,2022,Havre,133.0
+03+30,Oslo og Viken (2020-2023),2022,Rug og rughvete,535.0
+34,Innlandet,2022,Rug og rughvete,665.0
+38,Vestfold og Telemark (2020-2023),2022,Rug og rughvete,579.0
+11,Rogaland,2022,Rug og rughvete,411.0
+50,Trøndelag - Trööndelage,2022,Rug og rughvete,126.0
+03+30,Oslo og Viken (2020-2023),2023,Hvete,281.0
+34,Innlandet,2023,Hvete,324.0
+38,Vestfold og Telemark (2020-2023),2023,Hvete,268.0
+42,Agder,2023,Hvete,295.0
+11,Rogaland,2023,Hvete,557.0
+50,Trøndelag - Trööndelage,2023,Hvete,476.0
+03+30,Oslo og Viken (2020-2023),2023,Bygg,283.0
+34,Innlandet,2023,Bygg,337.0
+38,Vestfold og Telemark (2020-2023),2023,Bygg,325.0
+42,Agder,2023,Bygg,217.0
+11,Rogaland,2023,Bygg,455.0
+15,Møre og Romsdal,2023,Bygg,118.0
+50,Trøndelag - Trööndelage,2023,Bygg,378.0
+18,Nordland - Nordlánnda,2023,Bygg,299.0
+03+30,Oslo og Viken (2020-2023),2023,Havre,266.0
+34,Innlandet,2023,Havre,321.0
+38,Vestfold og Telemark (2020-2023),2023,Havre,317.0
+42,Agder,2023,Havre,318.0
+11,Rogaland,2023,Havre,450.0
+15,Møre og Romsdal,2023,Havre,181.0
+50,Trøndelag - Trööndelage,2023,Havre,371.0
+03+30,Oslo og Viken (2020-2023),2023,Rug og rughvete,347.0
+34,Innlandet,2023,Rug og rughvete,368.0
+38,Vestfold og Telemark (2020-2023),2023,Rug og rughvete,356.0
+50,Trøndelag - Trööndelage,2023,Rug og rughvete,59.0
+31,Østfold,2024,Hvete,412.0
+03+32,Oslo og Akershus,2024,Hvete,402.0
+34,Innlandet,2024,Hvete,472.0
+33,Buskerud,2024,Hvete,376.0
+39,Vestfold,2024,Hvete,378.0
+40,Telemark,2024,Hvete,339.0
+42,Agder,2024,Hvete,344.0
+11,Rogaland,2024,Hvete,425.0
+15,Møre og Romsdal,2024,Hvete,280.0
+50,Trøndelag - Trööndelage,2024,Hvete,430.0
+31,Østfold,2024,Bygg,462.0
+03+32,Oslo og Akershus,2024,Bygg,470.0
+34,Innlandet,2024,Bygg,492.0
+33,Buskerud,2024,Bygg,405.0
+39,Vestfold,2024,Bygg,451.0
+40,Telemark,2024,Bygg,380.0
+42,Agder,2024,Bygg,319.0
+11,Rogaland,2024,Bygg,499.0
+46,Vestland,2024,Bygg,588.0
+15,Møre og Romsdal,2024,Bygg,444.0
+50,Trøndelag - Trööndelage,2024,Bygg,440.0
+18,Nordland - Nordlánnda,2024,Bygg,236.0
+31,Østfold,2024,Havre,418.0
+03+32,Oslo og Akershus,2024,Havre,432.0
+34,Innlandet,2024,Havre,428.0
+33,Buskerud,2024,Havre,361.0
+39,Vestfold,2024,Havre,395.0
+40,Telemark,2024,Havre,362.0
+42,Agder,2024,Havre,274.0
+11,Rogaland,2024,Havre,486.0
+46,Vestland,2024,Havre,412.0
+15,Møre og Romsdal,2024,Havre,427.0
+50,Trøndelag - Trööndelage,2024,Havre,446.0
+18,Nordland - Nordlánnda,2024,Havre,327.0
+31,Østfold,2024,Rug og rughvete,410.0
+03+32,Oslo og Akershus,2024,Rug og rughvete,386.0
+34,Innlandet,2024,Rug og rughvete,446.0
+33,Buskerud,2024,Rug og rughvete,333.0
+39,Vestfold,2024,Rug og rughvete,433.0
+40,Telemark,2024,Rug og rughvete,423.0
+50,Trøndelag - Trööndelage,2024,Rug og rughvete,297.0

@@ -1,0 +1,33 @@
+crop,variable,n,correlation,p_value,p_adjusted,significant_5pct
+Bygg,downpour_10_3_z,295,-0.191,0.001,0.008,True
+Bygg,downpour_4_5_z,295,-0.329,0.0,0.0,True
+Bygg,downpour_6_7_z,295,-0.004,0.9428,1.0,False
+Bygg,downpour_former_8_9_z,295,-0.115,0.0479,0.3832,False
+Bygg,downpour_latter_8_9_z,295,-0.03,0.6028,1.0,False
+Bygg,first_frost_day_z,295,-0.153,0.0083,0.0664,False
+Bygg,last_frost_day_z,295,0.134,0.0216,0.1728,False
+Bygg,longest_dry_spell_z,295,-0.081,0.163,1.0,False
+Havre,downpour_10_3_z,290,-0.167,0.0044,0.0352,True
+Havre,downpour_4_5_z,290,-0.239,0.0,0.0,True
+Havre,downpour_6_7_z,290,0.021,0.7215,1.0,False
+Havre,downpour_former_8_9_z,290,-0.158,0.007,0.056,False
+Havre,downpour_latter_8_9_z,290,-0.159,0.0068,0.0544,False
+Havre,first_frost_day_z,290,-0.056,0.3416,1.0,False
+Havre,last_frost_day_z,290,0.07,0.2374,1.0,False
+Havre,longest_dry_spell_z,290,-0.033,0.5743,1.0,False
+Hvete,downpour_10_3_z,228,-0.311,0.0,0.0,True
+Hvete,downpour_4_5_z,228,-0.121,0.0688,0.5504,False
+Hvete,downpour_6_7_z,228,-0.078,0.2434,1.0,False
+Hvete,downpour_former_8_9_z,228,-0.303,0.0,0.0,True
+Hvete,downpour_latter_8_9_z,228,-0.162,0.0141,0.1128,False
+Hvete,first_frost_day_z,228,-0.168,0.011,0.088,False
+Hvete,last_frost_day_z,228,0.186,0.0048,0.0384,True
+Hvete,longest_dry_spell_z,228,-0.065,0.3249,1.0,False
+Rug og rughvete,downpour_10_3_z,174,-0.08,0.296,1.0,False
+Rug og rughvete,downpour_4_5_z,174,0.007,0.9243,1.0,False
+Rug og rughvete,downpour_6_7_z,174,0.046,0.5485,1.0,False
+Rug og rughvete,downpour_former_8_9_z,174,-0.18,0.0172,0.1376,False
+Rug og rughvete,downpour_latter_8_9_z,174,-0.024,0.7576,1.0,False
+Rug og rughvete,first_frost_day_z,174,-0.039,0.6058,1.0,False
+Rug og rughvete,last_frost_day_z,174,0.062,0.4133,1.0,False
+Rug og rughvete,longest_dry_spell_z,174,-0.066,0.39,1.0,False

@@ -1,0 +1,78 @@
+region_name,crop,available_years,first_year,last_year
+Agder,Bygg,5,2020,2024
+Agder,Havre,5,2020,2024
+Agder,Hvete,4,2020,2024
+Aust-Agder (-2019),Bygg,18,2001,2019
+Aust-Agder (-2019),Havre,19,2001,2019
+Aust-Agder (-2019),Hvete,12,2003,2019
+Buskerud,Bygg,1,2024,2024
+Buskerud,Havre,1,2024,2024
+Buskerud,Hvete,1,2024,2024
+Buskerud (-2019),Bygg,19,2001,2019
+Buskerud (-2019),Havre,19,2001,2019
+Buskerud (-2019),Hvete,19,2001,2019
+Hedmark (-2019),Bygg,19,2001,2019
+Hedmark (-2019),Havre,19,2001,2019
+Hedmark (-2019),Hvete,19,2001,2019
+Hordaland (-2019),Bygg,4,2002,2015
+Hordaland (-2019),Havre,3,2002,2018
+Innlandet,Bygg,5,2020,2024
+Innlandet,Havre,5,2020,2024
+Innlandet,Hvete,5,2020,2024
+Møre og Romsdal,Bygg,20,2001,2024
+Møre og Romsdal,Havre,18,2001,2024
+Møre og Romsdal,Hvete,5,2003,2024
+Nord-Trøndelag (-2017),Bygg,17,2001,2017
+Nord-Trøndelag (-2017),Havre,16,2001,2017
+Nord-Trøndelag (-2017),Hvete,15,2001,2017
+Nordland - Nordlánnda,Bygg,12,2011,2024
+Nordland - Nordlánnda,Havre,10,2012,2024
+Nordland - Nordlánnda,Hvete,1,2019,2019
+Oppland (-2019),Bygg,19,2001,2019
+Oppland (-2019),Havre,19,2001,2019
+Oppland (-2019),Hvete,19,2001,2019
+Oslo og Akershus,Bygg,1,2024,2024
+Oslo og Akershus,Havre,1,2024,2024
+Oslo og Akershus,Hvete,1,2024,2024
+Oslo og Akershus (-2019),Bygg,19,2001,2019
+Oslo og Akershus (-2019),Havre,19,2001,2019
+Oslo og Akershus (-2019),Hvete,19,2001,2019
+Oslo og Viken (2020-2023),Bygg,4,2020,2023
+Oslo og Viken (2020-2023),Havre,4,2020,2023
+Oslo og Viken (2020-2023),Hvete,4,2020,2023
+Rogaland,Bygg,24,2001,2024
+Rogaland,Havre,24,2001,2024
+Rogaland,Hvete,15,2001,2024
+Sogn og Fjordane (-2019),Bygg,1,2006,2006
+Sør-Trøndelag (-2017),Bygg,17,2001,2017
+Sør-Trøndelag (-2017),Havre,17,2001,2017
+Sør-Trøndelag (-2017),Hvete,14,2002,2017
+Telemark,Bygg,1,2024,2024
+Telemark,Havre,1,2024,2024
+Telemark,Hvete,1,2024,2024
+Telemark (-2019),Bygg,19,2001,2019
+Telemark (-2019),Havre,19,2001,2019
+Telemark (-2019),Hvete,19,2001,2019
+Trøndelag - Trööndelage,Bygg,7,2018,2024
+Trøndelag - Trööndelage,Havre,7,2018,2024
+Trøndelag - Trööndelage,Hvete,7,2018,2024
+Vest-Agder (-2019),Bygg,18,2001,2019
+Vest-Agder (-2019),Havre,19,2001,2019
+Vest-Agder (-2019),Hvete,4,2006,2019
+Vestfold,Bygg,1,2024,2024
+Vestfold,Havre,1,2024,2024
+Vestfold,Hvete,1,2024,2024
+Vestfold (-2019),Bygg,19,2001,2019
+Vestfold (-2019),Havre,19,2001,2019
+Vestfold (-2019),Hvete,19,2001,2019
+Vestfold og Telemark (2020-2023),Bygg,4,2020,2023
+Vestfold og Telemark (2020-2023),Havre,4,2020,2023
+Vestfold og Telemark (2020-2023),Hvete,4,2020,2023
+Vestland,Bygg,1,2024,2024
+Vestland,Havre,1,2024,2024
+Østfold,Bygg,1,2024,2024
+Østfold,Havre,1,2024,2024
+Østfold,Hvete,1,2024,2024
+Østfold (-2019),Bygg,19,2001,2019
+Østfold (-2019),Havre,19,2001,2019
+Østfold (-2019),Hvete,19,2001,2019
