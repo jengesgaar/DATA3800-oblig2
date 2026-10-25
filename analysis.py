@@ -19,7 +19,7 @@ OUTPUT_DIR = Path("datasets/analysis_results")
 START_YEAR = 2001
 END_YEAR = 2024
 
-CROPS = ["Hvete", "Bygg", "Havre"]
+CROPS = ["Hvete", "Bygg", "Havre", "Rug og rughvete"]
 
 # Data loading - load and validate cleaned crop yield datasets
 def load_data():
