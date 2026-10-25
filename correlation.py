@@ -31,12 +31,12 @@ EXPLANATORY = [
     "days_with_frost",
 ]
 
-COL_COUNTY, COL_CROP, COL_YEAR = "county", "crop", "year"
-GROUPS = [COL_COUNTY, COL_CROP, COL_YEAR]
+COL_REGION, COL_CROP, COL_YEAR = "region_name", "crop", "year"
+GROUPS = [COL_REGION, COL_CROP, COL_YEAR]
 
-# Counties with fewer years than this are skipped. With 8 years the
+# Regions with fewer years than this are skipped. With 8 years the
 # correlation has to reach 0.71 to be significant.
-MIN_YEARS_PER_COUNTY = 8
+MIN_YEARS_PER_REGION = 8
 
 
 def check_columns(df, required=None):
@@ -128,11 +128,11 @@ def by_crop(df, method="spearman"):
     return pd.concat(parts, ignore_index=True)
 
 
-def by_county(df, variable="rainfall_sum", method="spearman"):
+def by_region(df, variable="rainfall_sum", method="spearman"):
     """
-    One correlation per county and crop, to see whether it varies regionally.
+    One correlation per region and crop, to see whether it varies regionally.
 
-    Counties with too few years are dropped. A correlation based on five
+    Regions with too few years are dropped. A correlation based on five
     points looks just as convincing in a table as one based on twenty.
 
     df (DataFrame):
@@ -142,14 +142,14 @@ def by_county(df, variable="rainfall_sum", method="spearman"):
     method (string):
         -"spearman" or "pearson"
     """
-    check_columns(df, [variable, TARGET, COL_COUNTY, COL_CROP])
+    check_columns(df, [variable, TARGET, COL_REGION, COL_CROP])
     rows = []
-    for (county, crop), group in df.groupby([COL_COUNTY, COL_CROP]):
+    for (region, crop), group in df.groupby([COL_REGION, COL_CROP]):
         pair = group[[variable, TARGET]].dropna()
-        if len(pair) < MIN_YEARS_PER_COUNTY:
+        if len(pair) < MIN_YEARS_PER_REGION:
             continue
         r, p = _correlate(pair[variable], pair[TARGET], method)
-        rows.append({COL_COUNTY: county, COL_CROP: crop, "n": len(pair),
+        rows.append({COL_REGION: region, COL_CROP: crop, "n": len(pair),
                      "correlation": round(r, 3), "p_value": round(p, 4)})
     return (pd.DataFrame(rows)
               .sort_values([COL_CROP, "correlation"], ascending=[True, False]))
@@ -210,7 +210,7 @@ def run_all(df, outdir=OUTDIR):
         "matrix_pearson":  correlation_matrix(df, "pearson"),
         "overall":         correlation_with_pvalue(df),
         "by_crop":         by_crop(df),
-        "by_county":       by_county(df),
+        "by_region":       by_region(df),
     }
     for name, table in results.items():
         table.to_csv(outdir / f"{name}.csv", index=name.startswith("matrix"))
@@ -238,7 +238,7 @@ def test_data(seed=42):
     rng = np.random.default_rng(seed)
     effect = {"Wheat": -0.45, "Barley": -0.20, "Oats": 0.05}
     rows = []
-    for county in ["Ostlandet", "Innlandet", "Vestfold", "Agder",
+    for region in ["Ostlandet", "Innlandet", "Vestfold", "Agder",
                    "Rogaland", "Trondelag", "Nordland"]:
         normal = rng.uniform(250, 550)
         for year in range(2001, 2025):
@@ -247,7 +247,7 @@ def test_data(seed=42):
             wet = float(np.clip(rng.normal(0.45 + 0.30 * deviation, 0.06), 0, 1))
             for crop, e in effect.items():
                 rows.append({
-                    COL_COUNTY: county, COL_CROP: crop, COL_YEAR: year,
+                    COL_REGION: region, COL_CROP: crop, COL_YEAR: year,
                     TARGET: e * deviation + rng.normal(0, 0.10),
                     "rainfall_sum": round(total_mm, 1),
                     "rainfall_std": round(abs(rng.normal(4, 1)), 2),
