@@ -1,9 +1,9 @@
 """
-Korrelasjon mellom nedbør og avling.
+Correlation between rainfall and crop yield.
 
-Kjøres med:  python correlation.py
+Run with:  python correlation.py
 
-Hvis datasettet fra cleaning_merge.py ikke finnes, bruker den testdata i stedet.
+If the dataset from cleaning_merge.py is missing, test data is used instead.
 """
 from pathlib import Path
 
@@ -11,214 +11,268 @@ import numpy as np
 import pandas as pd
 from scipy import stats
 
-# --- oppsett ---
+# --- setup ---
 
-DATAFIL = Path("datasets/analysedata.csv")
-UTMAPPE = Path("datasets/korrelasjon")
+DATAFILE = Path("datasets/analysedata.csv")
+OUTDIR = Path("datasets/correlation")
 
-# Disse må stemme overens med det cleaning_merge.py lager.
-# TODO: dobbeltsjekk navnene
-MAAL = "yield_deviation"
+# These must match what cleaning_merge.py produces.
+# TODO: double-check the names
+TARGET = "yield_deviation"
 
-FORKLARENDE = [
-    "rainfall_sum",          # sum nedbør i vekstsesongen
-    "rainfall_std",          # hvor ujevnt regnet kom
-    "rainfall_planting",     # nedbør rundt såing
-    "rainfall_harvesting",   # nedbør rundt høsting
-    "percentage_wet",        # andel våte dager
-    "percentage_dry",        # andel tørre dager
-    "longest_dryspell",      # lengste tørkeperiode i dager
+EXPLANATORY = [
+    "rainfall_sum",          # total rainfall during the growing season
+    "rainfall_std",          # how unevenly the rain fell
+    "rainfall_planting",     # rainfall around planting
+    "rainfall_harvesting",   # rainfall around harvest
+    "percentage_wet",        # share of wet days
+    "percentage_dry",        # share of dry days
+    "longest_dryspell",      # longest dry spell in days
     "days_with_frost",
 ]
 
-KOL_FYLKE, KOL_VEKST, KOL_AAR = "county", "crop", "year"
-GRUPPER = [KOL_FYLKE, KOL_VEKST, KOL_AAR]
+COL_REGION, COL_CROP, COL_YEAR = "region_name", "crop", "year"
+GROUPS = [COL_REGION, COL_CROP, COL_YEAR]
 
-# Fylker med færre år enn dette hopper vi over. Med 8 år må korrelasjonen
-# opp i 0.71 for å bli signifikant.
-MIN_AAR_PER_FYLKE = 8
-
-
-def sjekk_kolonner(df, kreves=None):
-    """Sjekker at kolonnene vi trenger faktisk finnes."""
-    kreves = kreves or (FORKLARENDE + [MAAL] + GRUPPER)
-    mangler = [k for k in kreves if k not in df.columns]
-    if mangler:
-        raise KeyError(f"Datasettet mangler {mangler}. Fant: {sorted(df.columns)}")
+# Regions with fewer years than this are skipped. With 8 years the
+# correlation has to reach 0.71 to be significant.
+MIN_YEARS_PER_REGION = 8
 
 
-def _korr(x, y, metode):
-    f = stats.spearmanr if metode == "spearman" else stats.pearsonr
+def check_columns(df, required=None):
+    """
+    Checks that the columns we need are present in the dataframe.
+
+    df (DataFrame):
+        -dataset to check
+    required (list of strings):
+        -column names to look for, defaults to the ones used by this module
+    """
+    required = required or (EXPLANATORY + [TARGET] + GROUPS)
+    missing = [c for c in required if c not in df.columns]
+    if missing:
+        raise KeyError(f"Dataset is missing {missing}. Found: {sorted(df.columns)}")
+
+
+def _correlate(x, y, method):
+    f = stats.spearmanr if method == "spearman" else stats.pearsonr
     r, p = f(x, y)
     return float(r), float(p)
 
-# --- analyse ---
+# --- analysis ---
 
-def korrelasjonsmatrise(df, metode="spearman"):
-    """Alle tallkolonnene korrelert mot hverandre.
-
-    Bruker Spearman som standard. Den bryr seg bare om rekkefølgen på
-    verdiene, ikke avstanden mellom dem, så et ekstremt år som 2018
-    trekker ikke like mye.
+def correlation_matrix(df, method="spearman"):
     """
-    sjekk_kolonner(df)
-    return df[FORKLARENDE + [MAAL]].corr(method=metode).round(3)
+    Correlates every numeric column against every other one.
+
+    Spearman is the default. It only cares about the ranking of the values,
+    not the distance between them, so an extreme year like 2018 does not
+    pull as hard.
+
+    df (DataFrame):
+        -dataset containing the explanatory columns and the target
+    method (string):
+        -"spearman" or "pearson"
+    """
+    check_columns(df)
+    return df[EXPLANATORY + [TARGET]].corr(method=method).round(3)
 
 
-def korrelasjon_med_pverdi(df, metode="spearman"):
-    """Samme tall, men med p-verdi og n så vi ser hvor mye vi kan stole på dem."""
-    sjekk_kolonner(df)
-    rader = []
-    for variabel in FORKLARENDE:
-        par = df[[variabel, MAAL]].dropna()
-        if len(par) < 4:
-            rader.append({"variabel": variabel, "n": len(par),
-                          "korrelasjon": np.nan, "p_verdi": np.nan})
+def correlation_with_pvalue(df, method="spearman"):
+    """
+    Same numbers, but with p-value and n so we can see how much to trust them.
+
+    df (DataFrame):
+        -dataset containing the explanatory columns and the target
+    method (string):
+        -"spearman" or "pearson"
+    """
+    check_columns(df)
+    rows = []
+    for variable in EXPLANATORY:
+        pair = df[[variable, TARGET]].dropna()
+        if len(pair) < 4:
+            rows.append({"variable": variable, "n": len(pair),
+                         "correlation": np.nan, "p_value": np.nan})
             continue
-        r, p = _korr(par[variabel], par[MAAL], metode)
-        rader.append({"variabel": variabel, "n": len(par),
-                      "korrelasjon": round(r, 3), "p_verdi": round(p, 4)})
+        r, p = _correlate(pair[variable], pair[TARGET], method)
+        rows.append({"variable": variable, "n": len(pair),
+                     "correlation": round(r, 3), "p_value": round(p, 4)})
 
-    ut = pd.DataFrame(rader)
-    # Vi tester 8 variabler samtidig, så vi ganger p-verdien med antall
-    # tester for å ikke bli lurt av tilfeldige utslag.
-    ut["p_justert"] = (ut.p_verdi * len(FORKLARENDE)).clip(upper=1.0).round(4)
-    ut["signifikant_5pct"] = ut.p_justert < 0.05
-    return ut
+    out = pd.DataFrame(rows)
+    # We test 8 variables at once, so we multiply the p-value by the number
+    # of tests to avoid being fooled by random results.
+    out["p_adjusted"] = (out.p_value * len(EXPLANATORY)).clip(upper=1.0).round(4)
+    out["significant_5pct"] = out.p_adjusted < 0.05
+    return out
 
 
-def per_vekst(df, metode="spearman"):
-    """En tabell per vekst.
-
-    Hele poenget med oppgaven er jo å se om vekstene reagerer ulikt, og
-    det forsvinner hvis vi slår dem sammen.
+def by_crop(df, method="spearman"):
     """
-    sjekk_kolonner(df)
-    deler = []
-    for vekst, gruppe in df.groupby(KOL_VEKST):
-        d = korrelasjon_med_pverdi(gruppe, metode)
-        d.insert(0, KOL_VEKST, vekst)
-        deler.append(d)
-    return pd.concat(deler, ignore_index=True)
+    One table per crop.
 
+    The whole point of the assignment is to see whether the crops react
+    differently, and that disappears if we pool them.
 
-def per_fylke(df, variabel="rainfall_sum", metode="spearman"):
-    """En korrelasjon per fylke og vekst, for å se om det varierer regionalt.
-
-    Fylker med for få år droppes. En korrelasjon regnet på fem punkter
-    ser like overbevisende ut i tabellen som en regnet på tjue.
+    df (DataFrame):
+        -dataset containing the explanatory columns and the target
+    method (string):
+        -"spearman" or "pearson"
     """
-    sjekk_kolonner(df, [variabel, MAAL, KOL_FYLKE, KOL_VEKST])
-    rader = []
-    for (fylke, vekst), gruppe in df.groupby([KOL_FYLKE, KOL_VEKST]):
-        par = gruppe[[variabel, MAAL]].dropna()
-        if len(par) < MIN_AAR_PER_FYLKE:
+    check_columns(df)
+    parts = []
+    for crop, group in df.groupby(COL_CROP):
+        part = correlation_with_pvalue(group, method)
+        part.insert(0, COL_CROP, crop)
+        parts.append(part)
+    return pd.concat(parts, ignore_index=True)
+
+
+def by_region(df, variable="rainfall_sum", method="spearman"):
+    """
+    One correlation per region and crop, to see whether it varies regionally.
+
+    Regions with too few years are dropped. A correlation based on five
+    points looks just as convincing in a table as one based on twenty.
+
+    df (DataFrame):
+        -dataset containing the target and the given variable
+    variable (string):
+        -explanatory column to correlate against the target
+    method (string):
+        -"spearman" or "pearson"
+    """
+    check_columns(df, [variable, TARGET, COL_REGION, COL_CROP])
+    rows = []
+    for (region, crop), group in df.groupby([COL_REGION, COL_CROP]):
+        pair = group[[variable, TARGET]].dropna()
+        if len(pair) < MIN_YEARS_PER_REGION:
             continue
-        r, p = _korr(par[variabel], par[MAAL], metode)
-        rader.append({KOL_FYLKE: fylke, KOL_VEKST: vekst, "n": len(par),
-                      "korrelasjon": round(r, 3), "p_verdi": round(p, 4)})
-    return (pd.DataFrame(rader)
-              .sort_values([KOL_VEKST, "korrelasjon"], ascending=[True, False]))
+        r, p = _correlate(pair[variable], pair[TARGET], method)
+        rows.append({COL_REGION: region, COL_CROP: crop, "n": len(pair),
+                     "correlation": round(r, 3), "p_value": round(p, 4)})
+    return (pd.DataFrame(rows)
+              .sort_values([COL_CROP, "correlation"], ascending=[True, False]))
 
-# --- figurer ---
+# --- figures ---
 
-def varmekart(matrise, tittel, fil):
-    """Varmekart med matplotlib."""
+def heatmap(matrix, title, file):
+    """
+    Draws a heatmap of a correlation matrix and saves it as a png.
+
+    matrix (DataFrame):
+        -table of correlation values between -1 and 1
+    title (string):
+        -title printed above the figure
+    file (Path):
+        -where to save the png
+    """
     import matplotlib
     matplotlib.use("Agg")
     import matplotlib.pyplot as plt
 
-    fig, aks = plt.subplots(figsize=(1.1 * len(matrise.columns) + 3,
-                                     0.9 * len(matrise.index) + 2.5))
-    bilde = aks.imshow(matrise.values, cmap="RdBu_r", vmin=-1, vmax=1)
-    aks.set_xticks(range(len(matrise.columns)))
-    aks.set_xticklabels(matrise.columns, rotation=40, ha="right")
-    aks.set_yticks(range(len(matrise.index)))
-    aks.set_yticklabels(matrise.index)
+    fig, ax = plt.subplots(figsize=(1.1 * len(matrix.columns) + 3,
+                                    0.9 * len(matrix.index) + 2.5))
+    image = ax.imshow(matrix.values, cmap="RdBu_r", vmin=-1, vmax=1)
+    ax.set_xticks(range(len(matrix.columns)))
+    ax.set_xticklabels(matrix.columns, rotation=40, ha="right")
+    ax.set_yticks(range(len(matrix.index)))
+    ax.set_yticklabels(matrix.index)
 
-    # Skriv tallet inni hver rute, hvit tekst der bakgrunnen er for mørk
-    for i in range(matrise.shape[0]):
-        for j in range(matrise.shape[1]):
-            v = matrise.values[i, j]
+    # Print the value inside each cell, white text where the background is dark
+    for i in range(matrix.shape[0]):
+        for j in range(matrix.shape[1]):
+            v = matrix.values[i, j]
             if pd.notna(v):
-                aks.text(j, i, f"{v:.2f}", ha="center", va="center", fontsize=9,
-                         color="white" if abs(v) > 0.55 else "black")
+                ax.text(j, i, f"{v:.2f}", ha="center", va="center", fontsize=9,
+                        color="white" if abs(v) > 0.55 else "black")
 
-    aks.set_title(tittel)
-    fig.colorbar(bilde, ax=aks, shrink=.8, label="Korrelasjon")
+    ax.set_title(title)
+    fig.colorbar(image, ax=ax, shrink=.8, label="Correlation")
     fig.tight_layout()
-    fil.parent.mkdir(parents=True, exist_ok=True)
-    fig.savefig(fil, dpi=150)
+    file.parent.mkdir(parents=True, exist_ok=True)
+    fig.savefig(file, dpi=150)
     plt.close(fig)
 
 
-def kjor_alt(df, utmappe=UTMAPPE):
-    """Kjører alle analysene og lagrer resultatene."""
-    utmappe.mkdir(parents=True, exist_ok=True)
-    resultat = {
-        "matrise_spearman": korrelasjonsmatrise(df, "spearman"),
-        "matrise_pearson":  korrelasjonsmatrise(df, "pearson"),
-        "samlet":           korrelasjon_med_pverdi(df),
-        "per_vekst":        per_vekst(df),
-        "per_fylke":        per_fylke(df),
-    }
-    for navn, tabell in resultat.items():
-        tabell.to_csv(utmappe / f"{navn}.csv", index=navn.startswith("matrise"))
-
-    varmekart(resultat["matrise_spearman"], "Korrelasjoner (Spearman)",
-              utmappe / "varmekart_samlet.png")
-    varmekart(resultat["per_vekst"].pivot(index=KOL_VEKST, columns="variabel",
-                                          values="korrelasjon"),
-              "Korrelasjon mot avlingsavvik, per vekst",
-              utmappe / "varmekart_per_vekst.png")
-    return resultat
-
-# --- testdata ---
-
-def testdata(fro=42):
-    """Tilfeldige data med samme kolonner som det ekte datasettet.
-
-    Hvete og bygg er satt opp til å tape på mye nedbør, havre ikke. Da kan
-    jeg se om koden fanger det opp.
+def run_all(df, outdir=OUTDIR):
     """
-    rng = np.random.default_rng(fro)
-    effekt = {"Hvete": -0.45, "Bygg": -0.20, "Havre": 0.05}
-    rader = []
-    for fylke in ["Østlandet", "Innlandet", "Vestfold", "Agder",
-                  "Rogaland", "Trøndelag", "Nordland"]:
+    Runs every analysis and saves the tables and figures.
+
+    df (DataFrame):
+        -dataset containing the explanatory columns and the target
+    outdir (Path):
+        -folder to write the csv files and figures to
+    """
+    outdir.mkdir(parents=True, exist_ok=True)
+    results = {
+        "matrix_spearman": correlation_matrix(df, "spearman"),
+        "matrix_pearson":  correlation_matrix(df, "pearson"),
+        "overall":         correlation_with_pvalue(df),
+        "by_crop":         by_crop(df),
+        "by_region":       by_region(df),
+    }
+    for name, table in results.items():
+        table.to_csv(outdir / f"{name}.csv", index=name.startswith("matrix"))
+
+    heatmap(results["matrix_spearman"], "Correlations (Spearman)",
+            outdir / "heatmap_overall.png")
+    heatmap(results["by_crop"].pivot(index=COL_CROP, columns="variable",
+                                     values="correlation"),
+            "Correlation against yield deviation, by crop",
+            outdir / "heatmap_by_crop.png")
+    return results
+
+# --- test data ---
+
+def test_data(seed=42):
+    """
+    Random data with the same columns as the real dataset.
+
+    Wheat and barley are set up to lose out on heavy rainfall, oats are not.
+    That lets me check whether the code picks it up.
+
+    seed (int):
+        -seed for the random generator, so the data is reproducible
+    """
+    rng = np.random.default_rng(seed)
+    effect = {"Wheat": -0.45, "Barley": -0.20, "Oats": 0.05}
+    rows = []
+    for region in ["Ostlandet", "Innlandet", "Vestfold", "Agder",
+                   "Rogaland", "Trondelag", "Nordland"]:
         normal = rng.uniform(250, 550)
-        for aar in range(2001, 2025):
-            sum_mm = normal * rng.normal(1.0, 0.22)
-            avvik = sum_mm / normal - 1
-            våt = float(np.clip(rng.normal(0.45 + 0.30 * avvik, 0.06), 0, 1))
-            for vekst, e in effekt.items():
-                rader.append({
-                    KOL_FYLKE: fylke, KOL_VEKST: vekst, KOL_AAR: aar,
-                    MAAL: e * avvik + rng.normal(0, 0.10),
-                    "rainfall_sum": round(sum_mm, 1),
+        for year in range(2001, 2025):
+            total_mm = normal * rng.normal(1.0, 0.22)
+            deviation = total_mm / normal - 1
+            wet = float(np.clip(rng.normal(0.45 + 0.30 * deviation, 0.06), 0, 1))
+            for crop, e in effect.items():
+                rows.append({
+                    COL_REGION: region, COL_CROP: crop, COL_YEAR: year,
+                    TARGET: e * deviation + rng.normal(0, 0.10),
+                    "rainfall_sum": round(total_mm, 1),
                     "rainfall_std": round(abs(rng.normal(4, 1)), 2),
-                    "rainfall_planting": round(sum_mm * rng.uniform(.15, .3), 1),
-                    "rainfall_harvesting": round(sum_mm * rng.uniform(.2, .35), 1),
-                    "percentage_wet": round(våt, 3),
-                    "percentage_dry": round(1 - våt, 3),
-                    "longest_dryspell": int(np.clip(rng.normal(10 - 8 * avvik, 3), 0, 40)),
-                    "days_with_frost": int(np.clip(rng.normal(4 - 2 * avvik, 2), 0, 30)),
+                    "rainfall_planting": round(total_mm * rng.uniform(.15, .3), 1),
+                    "rainfall_harvesting": round(total_mm * rng.uniform(.2, .35), 1),
+                    "percentage_wet": round(wet, 3),
+                    "percentage_dry": round(1 - wet, 3),
+                    "longest_dryspell": int(np.clip(rng.normal(10 - 8 * deviation, 3), 0, 40)),
+                    "days_with_frost": int(np.clip(rng.normal(4 - 2 * deviation, 2), 0, 30)),
                 })
-    return pd.DataFrame(rader)
+    return pd.DataFrame(rows)
 
 
 def main():
-    if DATAFIL.exists():
-        df = pd.read_csv(DATAFIL)
-        print(f"Leste {len(df)} rader fra {DATAFIL}")
+    if DATAFILE.exists():
+        df = pd.read_csv(DATAFILE)
+        print(f"Read {len(df)} rows from {DATAFILE}")
     else:
-        df = testdata()
-        print(f"Fant ikke {DATAFIL}, bruker testdata ({len(df)} rader).")
-        print("NB: tallene under betyr ingenting, de er tilfeldige.\n")
+        df = test_data()
+        print(f"Could not find {DATAFILE}, using test data ({len(df)} rows).")
+        print("NB: the numbers below mean nothing, they are random.\n")
 
-    resultat = kjor_alt(df)
-    print(resultat["per_vekst"].to_string(index=False))
-    print(f"\nLagret i {UTMAPPE}")
+    results = run_all(df)
+    print(results["by_crop"].to_string(index=False))
+    print(f"\nSaved to {OUTDIR}")
 
 
 if __name__ == "__main__":
