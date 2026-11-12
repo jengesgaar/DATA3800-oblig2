@@ -7,7 +7,7 @@ from tools.dataset import standardized_metrics, overview
 
 def main():
 
-    weather_variables.main(True)
+    #weather_variables.main(True)
     cleaning_merge.clean_crop_data("datasets/aggricultural/04610.csv", 
                                    "datasets/aggricultural/04610_cleaned.csv")
 
@@ -36,7 +36,10 @@ def main():
     merged.to_csv("datasets/merged.csv", index=False)
     overview(merged)
 
-    correlation.run_all(merged)
+    df, survivors = correlation.keep_predictive(merged)
+
+
+    correlation.run_all(df, survivors)
     analysis.main()
 
 

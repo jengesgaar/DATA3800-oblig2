@@ -39,7 +39,7 @@ GROUPS = [COL_REGION, COL_CROP, COL_YEAR]
 MIN_YEARS_PER_REGION = 8
 
 
-def check_columns(df, required=None):
+def check_columns(df, explanatory=EXPLANATORY, required=None):
     """
     Checks that the columns we need are present in the dataframe.
 
@@ -48,7 +48,7 @@ def check_columns(df, required=None):
     required (list of strings):
         -column names to look for, defaults to the ones used by this module
     """
-    required = required or (EXPLANATORY + [TARGET] + GROUPS)
+    required = required or (explanatory + [TARGET] + GROUPS)
     missing = [c for c in required if c not in df.columns]
     if missing:
         raise KeyError(f"Dataset is missing {missing}. Found: {sorted(df.columns)}")
@@ -61,7 +61,7 @@ def _correlate(x, y, method):
 
 # --- analysis ---
 
-def correlation_matrix(df, method="spearman"):
+def correlation_matrix(df, explanatory=EXPLANATORY, method="spearman"):
     """
     Correlates every numeric column against every other one.
 
@@ -75,10 +75,10 @@ def correlation_matrix(df, method="spearman"):
         -"spearman" or "pearson"
     """
     check_columns(df)
-    return df[EXPLANATORY + [TARGET]].corr(method=method).round(3)
+    return df[explanatory + [TARGET]].corr(method=method).round(3)
 
 
-def correlation_with_pvalue(df, method="spearman"):
+def correlation_with_pvalue(df, explanatory=EXPLANATORY, method="spearman"):
     """
     Same numbers, but with p-value and n so we can see how much to trust them.
 
@@ -102,7 +102,7 @@ def correlation_with_pvalue(df, method="spearman"):
     out = pd.DataFrame(rows)
     # We test 8 variables at once, so we multiply the p-value by the number
     # of tests to avoid being fooled by random results.
-    out["p_adjusted"] = (out.p_value * len(EXPLANATORY)).clip(upper=1.0).round(4)
+    out["p_adjusted"] = (out.p_value * len(explanatory)).clip(upper=1.0).round(4)
     out["significant_5pct"] = out.p_adjusted < 0.05
     return out
 
@@ -195,7 +195,7 @@ def heatmap(matrix, title, file):
     plt.close(fig)
 
 
-def run_all(df, outdir=OUTDIR):
+def run_all(df, explanatory=EXPLANATORY, outdir=OUTDIR):
     """
     Runs every analysis and saves the tables and figures.
 
@@ -206,9 +206,9 @@ def run_all(df, outdir=OUTDIR):
     """
     outdir.mkdir(parents=True, exist_ok=True)
     results = {
-        "matrix_spearman": correlation_matrix(df, "spearman"),
-        "matrix_pearson":  correlation_matrix(df, "pearson"),
-        "overall":         correlation_with_pvalue(df),
+        "matrix_spearman": correlation_matrix(df, explanatory, "spearman"),
+        "matrix_pearson":  correlation_matrix(df, explanatory, "pearson"),
+        "overall":         correlation_with_pvalue(df, explanatory),
         "by_crop":         by_crop(df),
         "by_region":       by_region(df),
     }
@@ -260,6 +260,115 @@ def test_data(seed=42):
                 })
     return pd.DataFrame(rows)
 
+
+def keep_predictive(df):
+
+    weather_metrics = [
+        "longest_dry_spell", "first_frost_day", "last_frost_day",
+        "frost_pct_10_3", "frost_pct_former_8_9", "frost_pct_latter_8_9"
+    ]
+
+    monthly_periods = [
+        "_10_3",
+        "_former_8_9",
+        "_latter_8_9",
+        "_4_5",
+        "_6_7"
+    ]
+
+    complete_sets = [
+        "downpour",
+        "downpour_std",
+        "dry_pct"
+    ]
+
+    for i in complete_sets:
+        for n in monthly_periods:
+            weather_metrics.append(i+n)
+
+    correlations = all_metrics(df, weather_metrics)
+
+    best = eliminate_metrics(df, correlations, weather_metrics)
+
+    # Names of the surviving metrics
+    survivors = best["metric"].tolist()
+
+    # The eliminated metrics
+    eliminated = []
+
+    for metric in weather_metrics:
+        if metric not in survivors:
+            eliminated.append(metric)
+
+    # Remove the eliminated metrics from df
+    df = df.drop(columns=eliminated)
+
+    return df, survivors
+
+
+def all_metrics(df, metrics):
+
+
+    results = []
+
+    for metric in metrics:
+        corr = df[metric].corr(df[TARGET])
+        results.append({"metric": metric, "correlation":corr})
+
+    res = pd.DataFrame(results, columns=["metric", "correlation"])
+    res = res.sort_values("correlation", key=abs, ascending=False).reset_index(drop=True)
+
+    print(res.to_string())
+
+    return res
+
+
+
+
+def eliminate_metrics(df, res, metrics, min_corr=0.1, overlap=0.7):
+
+    # Remove weak metrics
+    res = res[res["correlation"].abs() >= min_corr].copy() 
+    res = res.sort_values("correlation", key=abs, ascending=False).reset_index(drop=True)
+
+    # Correlations between the remaining metrics
+    kept= res["metric"].tolist()
+    correlations = df[kept].corr()
+
+    # Assign each metric a class in regards to correlation between metrics
+    classes = {}
+    current = 0
+
+    for start in kept:
+        if start in classes:
+            continue
+
+        current += 1
+        queue = [start]
+
+        while queue:
+            m = queue.pop()
+            if m in classes:
+                continue
+
+            classes[m] = current
+
+            for other in kept:
+                if other in classes:
+                    continue
+            if abs(correlations.loc[m, other]) >= overlap:
+                queue.append(other)
+
+    res["correlation_class"] = res["metric"].map(classes) # maps the classes and and turns it into a new column
+
+    print(res.to_string())
+
+    #only keep the strongest meric in each class
+    # Because the dataset is sorted by correlation, the strongest correlation will always be first
+    best = res.drop_duplicates("correlation_class", keep="first").reset_index(drop=True)
+
+    print(best.to_string())
+    return best
 
 def main():
     if DATAFILE.exists():
