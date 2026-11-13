@@ -10,11 +10,12 @@ anything in this file.
 Run with:  python tools.py
 to print a few example calls and check that the data loads.
 """
+import unicodedata
 from pathlib import Path
 
 import pandas as pd
 
-DATA_DIR = Path("datasets")
+DATA_DIR = Path(__file__).resolve().parent / "datasets"
 MERGED = DATA_DIR / "merged.csv"
 BY_CROP = DATA_DIR / "correlation" / "by_crop.csv"
 
@@ -39,6 +40,18 @@ VARIABLE_LABELS = {
     "longest_dry_spell_z": "longest dry spell",
 }
 
+def _fold(text):
+    """
+    Lowercases and strips the accents, so "Trondelag" matches "Trøndelag"
+    and "Nordlandda" matches "Nordland - Nordlánnda". Without this the
+    agent only finds a region if the user types the Sami spelling.
+    """
+    text = text.strip().lower()
+    for a, b in (("ø", "o"), ("æ", "ae"), ("å", "a")):
+        text = text.replace(a, b)
+    return "".join(c for c in unicodedata.normalize("NFD", text)
+                   if unicodedata.category(c) != "Mn")
+
 _merged = None
 _by_crop = None
 
@@ -61,12 +74,12 @@ def _resolve_crop(crop):
     """
     if crop is None:
         return None
-    key = crop.strip().lower()
+    key = _fold(crop)
     if key in CROP_ALIASES:
         return CROP_ALIASES[key]
     df, _ = _load()
     for name in df.crop.unique():
-        if name.lower() == key:
+        if _fold(name) == key:
             return name
     return None
 
@@ -87,19 +100,19 @@ def _resolve_region(region):
         return None
     df, _ = _load()
     names = sorted(df.region_name.unique())
-    key = region.strip().lower()
+    key = _fold(region)
 
-    exact = [n for n in names if n.lower() == key]
+    exact = [n for n in names if _fold(n) == key]
     if exact:
         return exact[0]
 
-    starts = [n for n in names if n.lower().startswith(key)]
+    starts = [n for n in names if _fold(n).startswith(key)]
     if len(starts) == 1:
         return starts[0]
     if len(starts) > 1:
         return starts
 
-    contains = [n for n in names if key in n.lower()]
+    contains = [n for n in names if key in _fold(n)]
     if len(contains) == 1:
         return contains[0]
     return contains or None
@@ -154,16 +167,25 @@ def get_yield(region: str, crop: str, year: int) -> dict:
                 "years_available": sorted(int(y) for y in same.year.unique())}
 
     value = float(row.iloc[0].yield_kg_per_decare)
-    typical = float(same.yield_kg_per_decare.mean())
-    return {
+    years = int(same.yield_kg_per_decare.notna().sum())
+    out = {
         "region": region_name,
         "crop": crop_name,
         "year": int(year),
         "yield_kg_per_decare": round(value, 1),
-        "typical_for_this_region": round(typical, 1),
-        "deviation_pct": round((value / typical - 1) * 100, 1),
-        "years_in_average": int(same.yield_kg_per_decare.notna().sum()),
+        "years_in_average": years,
     }
+
+    # With only a handful of years the "normal" is mostly this year itself,
+    # so the deviation would read as 0 % and mean nothing. Say so instead.
+    if years >= 5:
+        typical = float(same.yield_kg_per_decare.mean())
+        out["typical_for_this_region"] = round(typical, 1)
+        out["deviation_pct"] = round((value / typical - 1) * 100, 1)
+    else:
+        out["note"] = (f"Only {years} year(s) of data for this region and "
+                       "crop, too few to say what is normal.")
+    return out
 
 
 def get_crop_correlations(crop: str) -> dict:
@@ -201,12 +223,13 @@ def get_crop_correlations(crop: str) -> dict:
             }
             for r in rows.itertuples()
         ],
-        "note": "Correlations are weak throughout. Weather is one factor among "
-                "many, alongside soil, fertiliser, variety and management.",
+    "note": "Correlations are modest. The strongest are around 0.3 and "
+                "most are not significant. Weather is one factor among many, "
+                "alongside soil, fertiliser, variety and management.",
     }
 
 
-def compare_crops(variable: str) -> dict:
+def rank_crops_by_weather(variable: str) -> dict:    
     """
     Compares all crops on one weather variable, so the agent can answer
     questions like "which crop handles a dry spell best".
@@ -216,16 +239,17 @@ def compare_crops(variable: str) -> dict:
          example "longest dry spell" or "rainfall April-May"
     """
     _, corr = _load()
-    key = variable.strip().lower()
+    key = _fold(variable)
 
-    column = None
-    for col, label in VARIABLE_LABELS.items():
-        if key == col.lower() or key in label.lower():
-            column = col
-            break
-    if column is None:
+    matches = [col for col, label in VARIABLE_LABELS.items()
+               if key == _fold(col) or key in _fold(label)]
+    if not matches:
         return {"error": f"Unknown variable '{variable}'",
                 "available": list(VARIABLE_LABELS.values())}
+    if len(matches) > 1:
+        return {"error": f"'{variable}' matches several variables",
+                "candidates": [VARIABLE_LABELS[m] for m in matches]}
+    column = matches[0]
 
     rows = corr[corr.variable == column].sort_values("correlation")
     return {
@@ -279,6 +303,6 @@ if __name__ == "__main__":
         print("  ", v)
     print()
 
-    print("compare_crops('longest dry spell'):")
-    for c in compare_crops("longest dry spell")["crops"]:
+    print("rank_crops_by_weather('longest dry spell'):")
+    for c in rank_crops_by_weather("longest dry spell")["crops"]:
         print("  ", c)

@@ -53,7 +53,7 @@ TOOLS = [
     agent_tools.list_options,
     agent_tools.get_yield,
     agent_tools.get_crop_correlations,
-    agent_tools.compare_crops,
+    agent_tools.rank_crops_by_weather,
 ]
 
 
